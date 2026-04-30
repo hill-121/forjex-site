@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORJEX — 工业软件开发者作品集</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; }
+        header { background: #1a1a2e; color: white; padding: 2rem; text-align: center; }
+        nav { background: #16213e; padding: 1rem; }
+        nav a { color: #eee; margin: 0 1rem; text-decoration: none; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
+        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 4rem 2rem; text-align: center; }
+        .section { margin: 3rem 0; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+        .card { border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; background: #f9f9f9; }
+        .card h3 { color: #667eea; margin-bottom: 1rem; }
+        .badge { display: inline-block; background: #667eea; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; margin: 0.2rem; }
+        footer { background: #1a1a2e; color: white; text-align: center; padding: 2rem; margin-top: 3rem; }
+        a { color: #667eea; }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>🚀 FORJEX</h1>
+        <p>工业软件开发者 · 自动化系统架构师</p>
+    </header>
+    <nav>
+        <a href="#about">关于我</a>
+        <a href="#projects">项目作品</a>
+        <a href="#skills">技术栈</a>
+        <a href="#blog">技术博客</a>
+        <a href="https://github.com/hill121" target="_blank">GitHub</a>
+    </nav>
+
+    <div class="hero">
+        <h2>软件工程 × 工业自动化</h2>
+        <p>专注工业软件开发、PLC 编程工具、自动化系统集成</p>
+        <p style="margin-top: 1rem;">
+            <a href="https://github.com/hill121" style="background: white; color: #667eea; padding: 0.8rem 2rem; border-radius: 25px; text-decoration: none; display: inline-block;">查看 GitHub →</a>
+        </p>
+    </div>
+
+    <div class="container">
+        <section id="about" class="section">
+            <h2>👨‍💻 关于我</h2>
+            <p>工业软件开发者，拥有 10+ 年自动化系统集成经验。擅长将软件工程技术应用于工业场景，开发过多个 PLC 编程工具、SCADA 系统、工业数据分析平台。</p>
+            <p>本站是技术作品集，展示我在工业软件领域的开发项目和技术研究。</p>
+        </section>
+
+        <section id="projects" class="section">
+            <h2>🔧 软件项目作品</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>多Agent内容生产系统</h3>
+                    <p>基于 AI Agent 的自动化内容生成系统，包含采集、文案、设计、动画、发布 5 个智能体。</p>
+                    <span class="badge">Python</span>
+                    <span class="badge">AI Agent</span>
+                    <span class="badge">自动化</span>
+                    <p style="margin-top: 1rem;"><a href="https://github.com/hill121" target="_blank">查看源码 →</a></p>
+                </div>
+
+                <div class="card">
+                    <h3>微信公众号自动化系统</h3>
+                    <p>完整的公众号内容自动化工具链：Markdown 转微信排版、图片优化、素材上传、Webhook 服务器、定时任务。</p>
+                    <span class="badge">Python</span>
+                    <span class="badge">FastAPI</span>
+                    <span class="badge">自动化</span>
+                    <p style="margin-top: 1rem;"><a href="https://github.com/hill121" target="_blank">查看源码 →</a></p>
+                </div>
+
+                <div class="card">
+                    <h3>PLC 教学资料管理系统</h3>
+                    <p>工业自动化教学资料整理与分享平台，包含 Siemens、Mitsubishi、Omron 等品牌 PLC 的编程示例和技术文档。</p>
+                    <span class="badge">静态网站</span>
+                    <span class="badge">技术文档</span>
+                    <span class="badge">教育项目</span>
+                </div>
+
+                <div class="card">
+                    <h3>工业数据分析工具</h3>
+                    <p>基于 Python 的工业现场数据采集与分析工具，支持 Modbus、OPC UA 等工业协议。</p>
+                    <span class="badge">Python</span>
+                    <span class="badge">数据分析</span>
+                    <span class="badge">工业物联网</span>
+                    <p style="margin-top: 1rem;"><a href="https://github.com/hill121" target="_blank">查看源码 →</a></p>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="section">
+            <h2>💻 技术栈</h2>
+            <div class="grid">
+                <div class="card">
+                    <h3>编程语言</h3>
+                    <p>
+                        <span class="badge">Python</span>
+                        <span class="badge">JavaScript</span>
+                        <span class="badge">SQL</span>
+                        <span class="badge">PLC 梯形图</span>
+                        <span class="badge">SCL</span>
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>框架与工具</h3>
+                    <p>
+                        <span class="badge">FastAPI</span>
+                        <span class="badge">Flask</span>
+                        <span class="badge">Git</span>
+                        <span class="badge">Docker</span>
+                        <span class="badge">Linux</span>
+                    </p>
+                </div>
+                <div class="card">
+                    <h3>工业软件</h3>
+                    <p>
+                        <span class="badge">TIA Portal</span>
+                        <span class="badge">GX Works</span>
+                        <span class="badge">SCADA</span>
+                        <span class="badge">Modbus</span>
+                        <span class="badge">OPC UA</span>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section id="blog" class="section">
+            <h2>📝 技术博客</h2>
+            <div class="card" style="margin-bottom: 1rem;">
+                <h3><a href="#">工业软件开发中的 Python 自动化实践</a></h3>
+                <p>如何使用 Python 构建工业自动化工具链...</p>
+                <small>2026-04-30 · Python · 自动化</small>
+            </div>
+            <div class="card" style="margin-bottom: 1rem;">
+                <h3><a href="#">PLC 编程教学资料的结构化整理方法</a></h3>
+                <p>从软件工程角度思考技术资料的分类与索引...</p>
+                <small>2026-04-28 · PLC · 教育技术</small>
+            </div>
+            <div class="card">
+                <h3><a href="#">微信自动化：从公众号到智能回复系统</a></h3>
+                <p>利用 AI Agent 构建内容自动化生产流程...</p>
+                <small>2026-04-25 · AI · 自动化</small>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2>🎯 开源贡献</h2>
+            <p>所有项目源码均已开源在 <a href="https://github.com/hill121" target="_blank">GitHub</a>，欢迎 Star 和 Fork！</p>
+            <p style="margin-top: 1rem;">
+                <a href="https://github.com/hill121?tab=repositories" target="_blank" style="background: #667eea; color: white; padding: 0.8rem 2rem; border-radius: 25px; text-decoration: none; display: inline-block;">浏览所有项目 →</a>
+            </p>
+        </section>
+    </div>
+
+    <footer>
+        <p>© 2026 FORJEX — 工业软件开发者作品集</p>
+        <p>本站部署于 Netlify · 域名：forjex.is-a.dev（申请中）</p>
+        <p style="margin-top: 1rem;">
+            <a href="https://github.com/hill121" style="color: #667eea;">GitHub</a> ·
+            <a href="mailto:admin@forjex.dev" style="color: #667eea;">Email</a>
+        </p>
+    </footer>
+</body>
+</html>
