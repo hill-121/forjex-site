@@ -1,0 +1,928 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>教学培训设备 - FORJEX 技术资料站</title>
+    <meta name="description" content="FORJEX 教学培训设备技术资料：电工综合实训、PLC电气自动化、智能建造机器人、数控机床维修、机电一体化、陈列柜示教设备等教学设备的技术参数与原理资料。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Dropdown menu */
+        .nav-links .has-dropdown { position: relative; }
+        .nav-links .has-dropdown > a { display: flex; align-items: center; gap: 4px; }
+        .nav-links .has-dropdown > a::after { content: '▾'; font-size: .7rem; margin-left: 2px; }
+        .dropdown-menu {
+            position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+            background: var(--white); border: 1px solid var(--gray-300); border-radius: var(--radius-sm);
+            box-shadow: var(--shadow); min-width: 180px; padding: 8px 0;
+            opacity: 0; visibility: hidden; transition: var(--transition);
+            z-index: 100;
+        }
+        .nav-links .has-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; transform: translateX(-50%) translateY(0); }
+        .dropdown-menu a { display: block; padding: 10px 20px; font-size: .9rem; white-space: nowrap; }
+        .dropdown-menu a:hover { background: var(--primary-light); color: var(--primary); }
+        .dropdown-menu a::after { display: none; }
+
+        /* Product detail cards */
+        .detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+        .detail-card {
+            background: var(--white); border: 1px solid var(--gray-300); border-radius: var(--radius);
+            padding: 32px; transition: var(--transition);
+        }
+        .detail-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+        .detail-card .card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .detail-card .card-head .icon { font-size: 2rem; }
+        .detail-card .card-head h3 { font-size: 1.2rem; font-weight: 700; }
+        .detail-card .card-head .tag { font-size: .75rem; background: var(--primary-light); color: var(--primary); padding: 2px 10px; border-radius: 50px; font-weight: 600; }
+        .detail-card p { font-size: .9rem; color: var(--gray-500); line-height: 1.6; margin-bottom: 16px; }
+        .param-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+        .param-table th, .param-table td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--gray-300); }
+        .param-table th { background: var(--gray-100); font-weight: 600; color: var(--gray-700); width: 35%; }
+        .param-table td { color: var(--gray-700); }
+
+        /* Category nav */
+        .cat-nav {
+            display: flex; flex-wrap: wrap; gap: 10px;
+            justify-content: center; padding: 24px 0 32px;
+            position: sticky; top: 64px; z-index: 50;
+            background: var(--white); border-bottom: 1px solid var(--gray-300);
+            margin: 0 -20px; padding-left: 20px; padding-right: 20px;
+        }
+        .cat-nav a {
+            font-size: .85rem; font-weight: 600; color: var(--gray-600);
+            padding: 6px 16px; border-radius: 50px; border: 1px solid var(--gray-300);
+            background: var(--white); transition: var(--transition); white-space: nowrap;
+        }
+        .cat-nav a:hover, .cat-nav a.active {
+            background: var(--primary); color: #fff; border-color: var(--primary);
+        }
+        .cat-section { scroll-margin-top: 140px; }
+        .anchor-link { font-size: .8rem; opacity: 0; transition: opacity .2s; text-decoration: none; margin-left: 8px; }
+        .cat-section:hover .anchor-link { opacity: .6; }
+        .anchor-link:hover { opacity: 1 !important; }
+
+        /* Sidebar category nav */
+        .page-layout { display: flex; gap: 32px; position: relative; }
+        .sidebar-nav {
+            width: 200px; flex-shrink: 0;
+            position: sticky; top: 130px; align-self: flex-start;
+            max-height: calc(100vh - 150px); overflow-y: auto;
+            padding: 16px 0;
+        }
+        .sidebar-nav ul { list-style: none; padding: 0; margin: 0; border-left: 2px solid var(--gray-300); }
+        .sidebar-nav li a {
+            display: block; padding: 8px 12px 8px 16px;
+            font-size: .85rem; font-weight: 500; color: var(--gray-600);
+            text-decoration: none; border-left: 2px solid transparent;
+            margin-left: -2px; transition: var(--transition);
+        }
+        .sidebar-nav li a:hover { color: var(--primary); background: var(--primary-light); }
+        .sidebar-nav li a.active {
+            color: var(--primary); font-weight: 700;
+            border-left-color: var(--primary); background: var(--primary-light);
+        }
+        .sidebar-nav .nav-label { font-size: .7rem; text-transform: uppercase; letter-spacing: 1px; color: var(--gray-400); padding: 0 16px 8px; font-weight: 700; }
+        .main-content { flex: 1; min-width: 0; }
+
+        @media (max-width: 768px) {
+            .detail-grid { grid-template-columns: 1fr; }
+            .cat-nav { top: 56px; gap: 6px; padding: 12px 12px 16px; }
+            .cat-nav a { font-size: .78rem; padding: 4px 10px; }
+            .sidebar-nav { display: none; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">📚</span>
+                <span class="logo-text"><strong>FORJEX</strong> <span style="font-size:.8rem;font-weight:400;opacity:.7;">技术资料站</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">首页</a></li>
+                <li class="has-dropdown">
+                    <a href="#">产品中心</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="products-training.html">教学培训设备</a></li>
+                        <li><a href="products-flowmeter.html">流量计及仪表</a></li>
+                        <li><a href="products-automation.html">自动化设备</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#learning">学习资源</a></li>
+                <li><a href="index.html#cases">应用案例</a></li>
+                <li><a href="about.html">关于本站</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" style="min-height:50vh; padding:140px 0 50px;">
+        <div class="hero-bg"><div class="hero-grid"></div></div>
+        <div class="container hero-content">
+            <div class="hero-badge">🎓 教学培训设备资料</div>
+            <h1>教学培训设备<br><span class="highlight">技术档案与原理资料</span></h1>
+            <p class="hero-desc">整理高等院校及职业院校常用的实训装备技术资料，涵盖 PLC、电气控制、液压气动、工业机器人等方向。</p>
+        </div>
+    </section>
+
+    <!-- 非商业声明 -->
+    <section class="section">
+        <div class="container">
+            <div style="background:linear-gradient(135deg,#f0f7ff,#e8f4f8);border:1px solid #a0d4f7;border-radius:var(--radius-sm);padding:12px 20px;text-align:center;font-size:.85rem;color:var(--gray-600);">
+                ⚠️ <strong>非商业声明</strong>：本站为个人教育项目，所有内容仅供技术学习交流，不涉及任何商业销售行为。
+            </div>
+        </div>
+    </section>
+
+    <!-- 设备资料列表 -->
+    <section class="section" id="product-list">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">设备资料库</span>
+                <h2>教学培训设备技术档案</h2>
+                <p>覆盖电工实训、PLC自动化、智能建造、机电一体化、数控维修、示教设备等方向</p>
+            </div>
+            <div class="page-layout">
+            <!-- 左侧边栏 -->
+            <nav class="sidebar-nav" id="sidebarNav">
+                <div class="nav-label">产品分类</div>
+                <ul>
+                    <li><a href="#cat-electric" data-cat="cat-electric">⚡ 电工综合实训</a></li>
+                    <li><a href="#cat-repair" data-cat="cat-repair">🏆 维修电工/竞赛</a></li>
+                    <li><a href="#cat-robot" data-cat="cat-robot">🤖 智能建造/机器人</a></li>
+                    <li><a href="#cat-plc" data-cat="cat-plc">🔧 PLC/电气自动化</a></li>
+                    <li><a href="#cat-cnc" data-cat="cat-cnc">🏭 数控机床维修</a></li>
+                    <li><a href="#cat-mechatronics" data-cat="cat-mechatronics">⚙️ 机电一体化</a></li>
+                    <li><a href="#cat-machine" data-cat="cat-machine">🔩 机床电气实训</a></li>
+                    <li><a href="#cat-cabinet" data-cat="cat-cabinet">📚 陈列柜/示教设备</a></li>
+                    <li><a href="#cat-other" data-cat="cat-other">📦 其他产品</a></li>
+                </ul>
+            </nav>
+            <div class="main-content">
+
+            <!-- 电工综合实训 -->
+            <div class="section-header" style="margin-top:48px;">
+                <h3 id="cat-electric" class="cat-section">⚡ 电工综合实训 <a href="#cat-electric" class="anchor-link" title="复制此分类链接">🔗</a></h3>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-EL-735D 电工综合实训考核装置</h3></div>
+                    <p>集电工基础实训与技能考核于一体的综合装置，支持电路接线、故障排查、仪表使用等多种考核项目，适用于电工技能等级评定与培训。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC380V/50Hz</td></tr>
+                        <tr><th>外形尺寸</th><td>1600×700×1750mm</td></tr>
+                        <tr><th>主要特点</th><td>集成考核评分系统</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-EL-DGY03 电工技术综合实验平台</h3></div>
+                    <p>综合性电工技术实验平台，涵盖直流电路、交流电路、三相电路等基础电工实验，配备完善的安全保护系统，满足电工技术课程教学需求。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC380V±10% 50Hz</td></tr>
+                        <tr><th>外形尺寸</th><td>1650×720×1540mm</td></tr>
+                        <tr><th>主要特点</th><td>模块化结构，仪表集成</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-EL-DY04C 低压电工实操考核设备</h3></div>
+                    <p>专为低压电工实操考核设计，模拟真实低压配电环境，支持电气安装、线路检修、安全操作等实操项目的考核与训练。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC380V±5% 50Hz</td></tr>
+                        <tr><th>外形尺寸</th><td>1600×1100×1690mm（双面）</td></tr>
+                        <tr><th>重量</th><td><200Kg</td></tr>
+                        <tr><th>主要特点</th><td>双面工位，每面含考核系统</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-EL-DH06 电工技术综合实验装置</h3></div>
+                    <p>模块化电工技术实验装置，支持电路原理验证、电气测量、电机控制等实验项目，灵活组合满足不同层次教学需求。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC380V±10% 50Hz</td></tr>
+                        <tr><th>外形尺寸</th><td>1650×720×1540mm</td></tr>
+                        <tr><th>主要特点</th><td>模块化设计，含直流电源和信号源</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-EL-DG6 电工综合实验实训工作台</h3></div>
+                    <p>多功能电工实训工作台，集成实验与实训功能，配备标准仪器仪表接口和安全防护系统，适用于电工技能综合训练。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC380V±10% 50Hz</td></tr>
+                        <tr><th>外形尺寸</th><td>1600×700×1750mm</td></tr>
+                        <tr><th>主要特点</th><td>综合电工实训与PLC应用</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+            </div>
+
+            <!-- 维修电工/竞赛训练 -->
+            <div class="section-header" style="margin-top:48px;">
+                <h3 id="cat-repair" class="cat-section">🏆 维修电工/竞赛训练 <a href="#cat-repair" class="anchor-link" title="复制此分类链接">🔗</a></h3>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-RP-W01B 高性能中级维修电工及技能培训考核实训装置</h3></div>
+                    <p>面向中级维修电工技能培训与考核，涵盖电机控制线路排故、PLC应用、变频调速等核心技能模块，支持标准化考核评分。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC380V</td></tr>
+                        <tr><th>外形尺寸</th><td>1400×700×1500mm</td></tr>
+                        <tr><th>主要特点</th><td>含故障设置与排除系统</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-RP-YD01A 安全用电实训台</h3></div>
+                    <p>专为安全用电教育设计的实训台，通过模拟触电防护、接地保护、漏电检测等场景，强化安全用电意识与操作规范。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC220V/380V</td></tr>
+                        <tr><th>外形尺寸</th><td>1200×600×1400mm</td></tr>
+                        <tr><th>主要特点</th><td>模拟触电防护场景</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-RP-WDG02A 通用电工竞赛训练平台</h3></div>
+                    <p>对标职业技能竞赛标准设计的训练平台，涵盖电气安装、线路调试、故障排除等竞赛项目，助力选手竞赛集训与技能提升。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC380V</td></tr>
+                        <tr><th>外形尺寸</th><td>1400×700×1500mm</td></tr>
+                        <tr><th>主要特点</th><td>对标国赛标准</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-RP-WX107 智能型高级维修电工及技师实训考核装置</h3></div>
+                    <p>面向高级维修电工和技师的智能实训考核系统，集成智能故障设置、自动评分、远程监控等功能，适用于高级技能人才培训。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC380V</td></tr>
+                        <tr><th>外形尺寸</th><td>1600×800×1500mm</td></tr>
+                        <tr><th>主要特点</th><td>智能故障设置+自动评分</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-RP-WJ03 维修电工技师实训考核装置</h3></div>
+                    <p>专为维修电工技师级别考核设计，涵盖复杂电气系统分析、故障诊断、PLC程序编写等高级技能训练与考核项目。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC380V</td></tr>
+                        <tr><th>外形尺寸</th><td>1600×700×1500mm</td></tr>
+                        <tr><th>主要特点</th><td>面向技师级别考核</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+            </div>
+
+            <!-- 智能建造/机器人 -->
+            <div class="section-header" style="margin-top:48px;">
+                <h3 id="cat-robot" class="cat-section">🤖 智能建造/机器人 <a href="#cat-robot" class="anchor-link" title="复制此分类链接">🔗</a></h3>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-RB-BL19X 多功能智能建造机器人系统</h3></div>
+                    <p>集成多自由度机械臂、视觉导航及智能控制的多功能建造机器人系统，支持砌筑、喷涂、搬运等建造工序的自动化实训。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC220V/380V</td></tr>
+                        <tr><th>机器人类型</th><td>协作型</td></tr>
+                        <tr><th>主要特点</th><td>3D打印+装配</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-RB-BL20X 智能建造综合实训平台</h3></div>
+                    <p>模拟智能建造全流程的综合实训平台，集成BIM建模、机器人施工、质量检测等模块，培养智能建造复合型人才。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC380V</td></tr>
+                        <tr><th>外形尺寸</th><td>2000×1500×1800mm</td></tr>
+                        <tr><th>主要特点</th><td>BIM+机器人协同</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-RB-BL21X 多机器人协同与视觉感知实训生产线</h3></div>
+                    <p>多台工业机器人协同作业的实训生产线，集成3D视觉感知、运动规划与调度系统，展示智能制造产线协同控制技术。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>机器人配置</th><td>3台协作型</td></tr>
+                        <tr><th>视觉系统</th><td>2D工业相机</td></tr>
+                        <tr><th>主要特点</th><td>协同装配+视觉检测</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-RB-BL22X 具身智能机器人实训设备</h3></div>
+                    <p>基于具身智能技术的机器人实训设备，融合大语言模型与机器人控制，支持人机交互、自主决策等前沿AI实训项目。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>机器人类型</th><td>6轴协作型</td></tr>
+                        <tr><th>主要特点</th><td>AI视觉+力控抓取</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-RB-BL23X 人形机器人七轴手臂科研应用</h3></div>
+                    <p>七自由度人形机器人手臂科研平台，具备高精度力控与柔顺抓取能力，适用于机器人学、人工智能等方向的科研与教学。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>关节自由度</th><td>7轴</td></tr>
+                        <tr><th>负载能力</th><td>3kg</td></tr>
+                        <tr><th>主要特点</th><td>科研级人形机器人</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+            </div>
+
+            <!-- PLC/电气自动化 -->
+            <div class="section-header" style="margin-top:48px;">
+                <h3 id="cat-plc" class="cat-section">🔧 PLC/电气自动化 <a href="#cat-plc" class="anchor-link" title="复制此分类链接">🔗</a></h3>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-PL-LC01 PLC实验台</h3></div>
+                    <p>集成主流品牌PLC控制器的实验台，配套触摸屏、变频器及多种I/O模块，支持梯形图、ST编程及工业通信实训，适用于自动化专业课程教学。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>PLC型号</th><td>西门子S7-1200</td></tr>
+                        <tr><th>外形尺寸</th><td>1200×600×1500mm</td></tr>
+                        <tr><th>I/O配置</th><td>24DI+16DO</td></tr>
+                        <tr><th>主要特点</th><td>支持梯形图/ST编程</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-PL-DQ04 电气控制与PLC综合实训装置</h3></div>
+                    <p>将传统电气控制与现代PLC技术相结合的综合实训装置，覆盖继电器控制、PLC编程、变频调速等核心技能训练。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC380V</td></tr>
+                        <tr><th>外形尺寸</th><td>1400×700×1500mm</td></tr>
+                        <tr><th>主要特点</th><td>含继电器控制+PLC编程</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-PL-N09 六工位PLC可编程控制器实训台</h3></div>
+                    <p>六工位设计的PLC实训台，支持多人同时进行PLC编程实训，提高教学效率，适用于班级集中授课与分组实验。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>工位数</th><td>6</td></tr>
+                        <tr><th>PLC型号</th><td>三菱FX5U</td></tr>
+                        <tr><th>外形尺寸</th><td>2400×1200×1500mm</td></tr>
+                        <tr><th>主要特点</th><td>多人同时实训</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-PL-ZD11 工业电气自动化及电工技能考核实训平台</h3></div>
+                    <p>集工业电气自动化与电工技能考核于一体的综合平台，涵盖PLC控制、变频调速、电气排故等自动化核心技能训练与考核。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC380V</td></tr>
+                        <tr><th>外形尺寸</th><td>1600×800×1600mm</td></tr>
+                        <tr><th>主要特点</th><td>涵盖变频+伺服+HMI</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-PL-S201 智能控制设备运行与维护系统</h3></div>
+                    <p>面向智能控制设备运维的实训系统，涵盖设备调试、参数设置、故障诊断及预防性维护等工业现场核心运维技能。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC380V</td></tr>
+                        <tr><th>外形尺寸</th><td>2000×1000×1800mm</td></tr>
+                        <tr><th>主要特点</th><td>模拟产线运行维护</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+            </div>
+
+            <!-- 数控机床电气维修 -->
+            <div class="section-header" style="margin-top:48px;">
+                <h3 id="cat-cnc" class="cat-section">🏭 数控机床电气维修 <a href="#cat-cnc" class="anchor-link" title="复制此分类链接">🔗</a></h3>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-CN-802CMC 数控铣床电气控制与维修实训台</h3></div>
+                    <p>基于真实数控铣床电气系统设计的实训台，支持数控系统参数配置、伺服驱动调试、电气故障诊断与维修等实训项目。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>数控系统</th><td>FANUC/Siemens</td></tr>
+                        <tr><th>外形尺寸</th><td>1600×800×1600mm</td></tr>
+                        <tr><th>主要特点</th><td>模拟数控铣床故障</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-CN-FTA 数控车床综合技能维修实训考核系统</h3></div>
+                    <p>数控车床电气维修综合考核系统，集成故障设置、自动评分功能，涵盖数控车床电气安装、调试、排故全流程技能考核。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>数控系统</th><td>多品牌可选</td></tr>
+                        <tr><th>外形尺寸</th><td>1800×800×1600mm</td></tr>
+                        <tr><th>主要特点</th><td>网络型，支持远程考核</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-CN-T68A 卧式镗床电气技能实训考核装置</h3></div>
+                    <p>基于卧式镗床电气控制系统的实训考核装置，支持镗床电气原理分析、故障排查、控制线路安装等技能训练与考核。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>1600×700×1500mm</td></tr>
+                        <tr><th>主要特点</th><td>模拟T68镗床电气系统</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-CN-CA6140B 普通车床电气技能维修实训考核装置</h3></div>
+                    <p>基于CA6140普通车床电气系统设计的维修实训装置，涵盖主轴控制、进给系统、冷却润滑等电气故障的诊断与维修训练。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>1600×700×1500mm</td></tr>
+                        <tr><th>主要特点</th><td>模拟CA6140车床电气</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-CN-Z015A 加工中心主轴装调与检测实训设备</h3></div>
+                    <p>专为加工中心主轴装调与精度检测设计的实训设备，涵盖主轴装配、动平衡校正、精度检测及误差补偿等核心技能训练。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>1200×800×1400mm</td></tr>
+                        <tr><th>主要特点</th><td>主轴装配+精度检测</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+            </div>
+
+            <!-- 机电一体化 -->
+            <div class="section-header" style="margin-top:48px;">
+                <h3 id="cat-mechatronics" class="cat-section">⚙️ 机电一体化 <a href="#cat-mechatronics" class="anchor-link" title="复制此分类链接">🔗</a></h3>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-ME-Y05A 机电设备装调实训装置</h3></div>
+                    <p>模拟机电设备安装调试全过程，涵盖机械装配、电气接线、传感器安装、系统联调等核心技能训练，培养机电一体化复合型人才。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC380V</td></tr>
+                        <tr><th>外形尺寸</th><td>1600×800×1500mm</td></tr>
+                        <tr><th>主要特点</th><td>含机械装配+电气调试</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-ME-S05 伺服电机负载实训设备</h3></div>
+                    <p>伺服电机带载运行实训设备，支持伺服驱动参数整定、位置控制、速度控制、转矩控制等伺服系统核心技能训练。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>伺服品牌</th><td>三菱/安川</td></tr>
+                        <tr><th>外形尺寸</th><td>1200×600×1400mm</td></tr>
+                        <tr><th>主要特点</th><td>模拟真实负载特性</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-ME-CZ05 电机与变压器实训装置</h3></div>
+                    <p>涵盖多种电机与变压器的原理验证与特性测试，支持直流电机、异步电机、变压器等电气设备的拆装、测试与维修实训。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC380V</td></tr>
+                        <tr><th>电机类型</th><td>三相异步/直流/步进</td></tr>
+                        <tr><th>主要特点</th><td>多种电机对比实训</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-ME-Y05C 通用机电设备安装与调试实训装置</h3></div>
+                    <p>通用型机电设备安装调试实训平台，集成机械传动、电气控制、气动系统等模块，支持典型机电设备的安装与调试全流程训练。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC380V</td></tr>
+                        <tr><th>外形尺寸</th><td>1800×800×1600mm</td></tr>
+                        <tr><th>主要特点</th><td>通用性强</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-ME-JD09 机电一体化综合实训装置</h3></div>
+                    <p>机电一体化综合实训平台，融合机械、电气、气动、PLC控制等多学科技术，支持典型自动化生产线的安装、编程与调试实训。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>电源</th><td>AC380V</td></tr>
+                        <tr><th>外形尺寸</th><td>2000×1000×1800mm</td></tr>
+                        <tr><th>主要特点</th><td>PLC+变频+伺服+HMI全集成</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+            </div>
+
+            <!-- 机床电气实训 -->
+            <div class="section-header" style="margin-top:48px;">
+                <h3 id="cat-machine" class="cat-section">🔩 机床电气实训 <a href="#cat-machine" class="anchor-link" title="复制此分类链接">🔗</a></h3>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-MA-Z3040G Z3040摇臂钻床电气技能实训考核装置</h3></div>
+                    <p>基于Z3040摇臂钻床电气控制线路设计的实训考核装置，支持摇臂钻床电气原理分析、故障设置与排查等技能训练。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>1600×700×1500mm</td></tr>
+                        <tr><th>主要特点</th><td>模拟摇臂钻床电气系统</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-MA-C6140 车床电气技能培训考核实验装置</h3></div>
+                    <p>基于C6140车床电气系统的培训考核装置，涵盖车床主轴控制、进给传动、冷却系统等电气线路的分析与排故实训。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>1600×700×1500mm</td></tr>
+                        <tr><th>主要特点</th><td>模拟C6140车床</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-MA-M7130K 平面磨床电气技能培训考核实验装置</h3></div>
+                    <p>基于M7130K平面磨床电气控制系统的实训装置，支持磨床电气线路分析、液压系统联锁控制、故障诊断等技能训练。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>1600×700×1500mm</td></tr>
+                        <tr><th>主要特点</th><td>模拟M7130K磨床</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-MA-T68 卧式镗床实训及技能考核装置</h3></div>
+                    <p>基于卧式镗床电气控制系统的实训考核装置，涵盖主轴驱动、进给控制、辅助系统等电气技能的综合训练与考核。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>1600×700×1500mm</td></tr>
+                        <tr><th>主要特点</th><td>模拟T68镗床</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-MA-806 机床电气智能化综合实训考核平台</h3></div>
+                    <p>智能化机床电气综合实训考核平台，集成多种典型机床电气系统，支持智能故障设置、自动评分及远程监控功能。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>1800×800×1600mm</td></tr>
+                        <tr><th>主要特点</th><td>多种机床电气系统集成</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+            </div>
+
+            <!-- 陈列柜/示教设备 -->
+            <div class="section-header" style="margin-top:48px;">
+                <h3 id="cat-cabinet" class="cat-section">📚 陈列柜/示教设备 <a href="#cat-cabinet" class="anchor-link" title="复制此分类链接">🔗</a></h3>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-CB-103 减速器陈列柜</h3></div>
+                    <p>展示各类减速器结构原理的教学陈列柜，包含齿轮减速器、蜗轮蜗杆减速器、行星减速器等多种实物模型，配合理论教学直观演示。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>1200×400×1800mm</td></tr>
+                        <tr><th>材质</th><td>铝合金+亚克力</td></tr>
+                        <tr><th>主要特点</th><td>实物模型+CD解说</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-CB-104 电机与变压器示教陈列柜</h3></div>
+                    <p>展示各类电机与变压器结构的示教陈列柜，包含直流电机、交流电机、变压器等实物剖面模型，直观呈现内部结构与工作原理。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>1200×400×1800mm</td></tr>
+                        <tr><th>材质</th><td>铝合金+亚克力</td></tr>
+                        <tr><th>主要特点</th><td>实物模型+CD解说</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-CB-105 液压与气动传动示教陈列柜</h3></div>
+                    <p>展示液压与气动传动元件及回路的示教陈列柜，包含各类液压泵、阀、缸及气动元件的实物模型与透明回路演示。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>1200×400×1800mm</td></tr>
+                        <tr><th>材质</th><td>铝合金+亚克力</td></tr>
+                        <tr><th>主要特点</th><td>实物模型+CD解说</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-CB-107 金属工艺学示教陈列柜</h3></div>
+                    <p>展示金属加工工艺过程的示教陈列柜，包含铸造、锻造、焊接、切削加工等工艺的实物样品与工艺流程展示。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>1200×400×1800mm</td></tr>
+                        <tr><th>材质</th><td>铝合金+亚克力</td></tr>
+                        <tr><th>主要特点</th><td>实物模型+CD解说</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-CB-102 机械零件示教陈列柜</h3></div>
+                    <p>展示各类标准机械零件的示教陈列柜，包含螺纹连接件、键、销、轴承、联轴器等标准件实物模型，辅助机械设计课程教学。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>1200×400×1800mm</td></tr>
+                        <tr><th>材质</th><td>铝合金+亚克力</td></tr>
+                        <tr><th>主要特点</th><td>实物模型+CD解说</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-CB-109 机械原理示教陈列柜</h3></div>
+                    <p>展示各类机械传动机构原理的示教陈列柜，包含齿轮传动、带传动、链传动、凸轮机构等典型机构的动态演示模型。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>1200×400×1800mm</td></tr>
+                        <tr><th>材质</th><td>铝合金+亚克力</td></tr>
+                        <tr><th>主要特点</th><td>实物模型+CD解说</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-CB-114 焊接工艺学示教陈列柜</h3></div>
+                    <p>展示各类焊接工艺与焊缝质量的示教陈列柜，包含电弧焊、气体保护焊、钎焊等焊接方法的实物样品与缺陷对比展示。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>1200×400×1800mm</td></tr>
+                        <tr><th>材质</th><td>铝合金+亚克力</td></tr>
+                        <tr><th>主要特点</th><td>实物模型+CD解说</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-CB-116 模具示教陈列柜</h3></div>
+                    <p>展示各类模具结构与成型原理的示教陈列柜，包含冲压模具、塑料注射模具、压铸模具等典型模具的剖面实物模型。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>1200×400×1800mm</td></tr>
+                        <tr><th>材质</th><td>铝合金+亚克力</td></tr>
+                        <tr><th>主要特点</th><td>实物模型+CD解说</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-CB-103 减速器陈列柜（CD解说）</h3></div>
+                    <p>带CD语音解说的减速器陈列柜，在展示各类减速器结构的同时，通过语音自动讲解工作原理与应用场景，提升教学效果。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>1200×400×1800mm</td></tr>
+                        <tr><th>材质</th><td>铝合金+亚克力</td></tr>
+                        <tr><th>主要特点</th><td>实物模型+CD解说</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+            </div>
+
+            <!-- 其他产品 -->
+            <div class="section-header" style="margin-top:48px;">
+                <h3 id="cat-other" class="cat-section">📦 其他产品 <a href="#cat-other" class="anchor-link" title="复制此分类链接">🔗</a></h3>
+            </div>
+            <div class="detail-grid">
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-OT-AE01B 标准型过程控制实验装置</h3></div>
+                    <p>标准型过程控制实验装置，涵盖液位、流量、温度、压力四大参数的检测与控制，支持PID调节、串级控制等过程控制实训。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-OT-GKY01 过程控制及自动化仪表实验装置</h3></div>
+                    <p>集成过程控制与自动化仪表的综合实验装置，配备智能仪表、电动调节阀及组态软件，支持仪表选型、安装与校准实训。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-OT-LYD03 运动控制系统实训考核平台</h3></div>
+                    <p>运动控制系统实训考核平台，涵盖伺服驱动、步进控制、多轴插补等运动控制核心技术的训练与考核。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>控制系统</th><td>伺服+步进</td></tr>
+                        <tr><th>外形尺寸</th><td>1600×800×1500mm</td></tr>
+                        <tr><th>主要特点</th><td>位置/速度/转矩控制</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-OT-KZ16 双容水箱实训装置</h3></div>
+                    <p>双容水箱液位控制系统实训装置，支持单回路、串级、比值等控制方案的实验与PID参数整定训练。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>外形尺寸</th><td>800×600×1500mm</td></tr>
+                        <tr><th>主要特点</th><td>过程控制基础实验</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-OT-DST02 智能制造单元理实一体化平台</h3></div>
+                    <p>集理论教学与实践操作于一体的智能制造实训平台，涵盖数控加工、机器人操作、产线调度等智能制造核心技术。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-OT-LS850 VMC850立式加工中心</h3></div>
+                    <p>VMC850立式加工中心教学设备，支持数控编程、刀具选择、工艺参数设置及加工操作等数控加工全流程实训。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>数控系统</th><td>FANUC</td></tr>
+                        <tr><th>行程</th><td>850×500×500mm</td></tr>
+                        <tr><th>主要特点</th><td>立式加工中心</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-OT-QG032 数控等离子切割机</h3></div>
+                    <p>数控等离子切割教学设备，支持数控编程、切割工艺参数设置、等离子切割操作等金属板材加工实训项目。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>切割厚度</th><td>0.5-30mm</td></tr>
+                        <tr><th>主要特点</th><td>CNC控制等离子切割</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-OT-CLJ33 三坐标测量机</h3></div>
+                    <p>三坐标测量教学设备，支持零件尺寸测量、形位公差检测、测量程序编写等精密测量技术实训与教学。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>测量精度</th><td>±0.003mm</td></tr>
+                        <tr><th>主要特点</th><td>高精度几何量测量</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-OT-JGQ72 远程激光雕刻切割综合实训系统</h3></div>
+                    <p>远程激光雕刻与切割综合实训系统，支持激光参数设置、图形编程、雕刻切割操作等激光加工技术实训。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>激光类型</th><td>CO2/光纤</td></tr>
+                        <tr><th>主要特点</th><td>远程控制+安全防护</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-OT-JGQ77 远程激光内雕类加工维修综合实训系统</h3></div>
+                    <p>远程激光内雕加工与维修综合实训系统，涵盖激光内雕原理、设备操作、光路调试及故障维修等实训项目。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>激光类型</th><td>Nd:YAG</td></tr>
+                        <tr><th>主要特点</th><td>玻璃内雕加工</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-OT-TY04 通用钳工实训教学平台</h3></div>
+                    <p>通用型钳工实训教学平台，涵盖划线、锯切、锉削、钻孔、攻丝等钳工基本技能训练，配备完善的工具与夹具。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>工位数</th><td>4</td></tr>
+                        <tr><th>主要特点</th><td>划线/锉削/锯切/钻孔</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+                <div class="detail-card">
+                    <div class="card-head"><h3>FJX-OT-VMC850 数控加工中心</h3></div>
+                    <p>数控加工中心教学设备，支持多轴联动编程、复杂曲面加工、刀具管理及在线检测等高级数控加工实训项目。</p>
+                    
+                    <div class="product-img" style="width:100%;height:140px;background:linear-gradient(135deg,#f0f4f8 0%,#e2e8f0 100%);border-radius:12px;display:flex;flex-direction:column;align-items:center;justify-content:center;margin-bottom:20px;position:relative;overflow:hidden;"><svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg><span style="font-size:.75rem;color:#94a3b8;margin-top:8px;">产品图片待上传</span></div>
+                    <table class="param-table">
+                        <tr><th>数控系统</th><td>FANUC</td></tr>
+                        <tr><th>行程</th><td>850×500×500mm</td></tr>
+                        <tr><th>主要特点</th><td>立式加工中心</td></tr>
+                    </table>
+                    <a href="#" class="card-link">查看技术资料 →</a>
+                </div>
+            </div>
+
+            </div><!-- /.main-content -->
+            </div><!-- /.page-layout -->
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">📚</span>
+                        <span class="logo-text"><strong>FORJEX</strong> <span style="font-size:.8rem;font-weight:400;opacity:.7;">技术资料站</span></span>
+                    </div>
+                    <p>FORJEX 工业自动化技术资料站 — 本站为个人教育项目，致力于整理和分享工业自动化领域的技术文档、设备资料与学习资源。</p>
+                    <p style="margin-top:8px;color:var(--gray-500);font-size:.85rem;">⚠️ 非商业项目 · 仅供技术学习交流</p>
+                </div>
+                <div class="footer-links">
+                    <h4>技术资料</h4>
+                    <ul>
+                        <li><a href="products-automation.html">自动化设备</a></li>
+                        <li><a href="products-training.html">教学培训设备</a></li>
+                        <li><a href="products-flowmeter.html">仪器仪表</a></li>
+                        <li><a href="products-flowmeter.html">流量计</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>学习支持</h4>
+                    <ul>
+                        <li><a href="index.html#cases">应用案例</a></li>
+                        <li><a href="index.html#learning">学习资源</a></li>
+                        <li><a href="about.html">关于本站</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 FORJEX 个人资料站 · 非商业教育项目 · 仅供技术学习交流</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+

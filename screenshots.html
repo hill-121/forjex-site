@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>项目截图 - FORJEX 软件作品集</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .screenshot-section {
+            padding: 60px 0;
+            background: var(--gray-50);
+        }
+        .screenshot-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+        .screenshot-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .screenshot-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .screenshot-img {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        .screenshot-content {
+            padding: 16px;
+        }
+        .screenshot-title {
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+        .screenshot-desc {
+            font-size: 0.85rem;
+            color: var(--gray-600);
+        }
+        /* 代码截图样式 */
+        .code-screenshot {
+            background: #1e1e1e;
+            color: #d4d4d4;
+            padding: 16px;
+            border-radius: 8px;
+            font-family: 'Courier New', monospace;
+            font-size: 0.8rem;
+            line-height: 1.4;
+            margin: 12px 0;
+        }
+        .code-keyword { color: #569cd6; }
+        .code-string { color: #ce9178; }
+        .code-comment { color: #6a9955; }
+    </style>
+</head>
+<body>
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">💻</span>
+                <span class="logo-text">FORJEX <span style="font-size:.8rem;font-weight:400;opacity:.7">软件作品集</span></span>
+            </a>
+        </div>
+    </nav>
+
+    <section class="screenshot-section">
+        <div class="container">
+            <h2 class="section-title">📸 项目截图与技术展示</h2>
+            <p class="section-subtitle">以下是我的软件项目实际界面和技术实现截图</p>
+            
+            <div class="screenshot-grid">
+                <!-- 多Agent系统 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img">🤖</div>
+                    <div class="screenshot-content">
+                        <div class="screenshot-title">多Agent内容生产系统</div>
+                        <div class="screenshot-desc">5个Agent协作的自动化内容生产流程</div>
+                        <div class="code-screenshot">
+<span class="code-keyword">class</span> <span class="code-string">AgentSystem</span>:<br>
+&nbsp;&nbsp;<span class="code-keyword">def</span> __init__(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;self.agents = [<span class="code-string">'采集菌'</span>, <span class="code-string">'文案猫'</span>]<br>
+&nbsp;&nbsp;&nbsp;&nbsp;self.workflow = <span class="code-string">'automated'</span><br>
+<br>
+&nbsp;&nbsp;<span class="code-comment"># 自动化内容生产流水线</span><br>
+&nbsp;&nbsp;<span class="code-keyword">def</span> run(self):<br>
+&nbsp;&nbsp;&nbsp;&nbsp;<span class="code-keyword">for</span> agent <span class="code-keyword">in</span> self.agents:<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;agent.execute()<br>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- PLC教学工具 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">🎓</div>
+                    <div class="screenshot-content">
+                        <div class="screenshot-title">PLC教学资料管理系统</div>
+                        <div class="screenshot-desc">TIA Portal项目示例与梯形图代码生成</div>
+                        <div class="code-screenshot">
+<span class="code-comment">// TIA Portal - PLC梯形图示例</span><br>
+<span class="code-keyword">Network 1: </span>启动电机<br>
+|<span class="code-string">    I0.0     Q0.0</span>|<br>
+|<span class="code-string">----[ ]-----()----</span>|<br>
+|<span class="code-string">   启动按钮  电机</span>|<br>
+<br>
+<span class="code-keyword">Network 2: </span>定时器<br>
+|<span class="code-string">    I0.1     T1</span>|<br>
+|<span class="code-string">----[ ]-----[TON]--</span>|<br>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 微信自动化 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">💬</div>
+                    <div class="screenshot-content">
+                        <div class="screenshot-title">微信公众号自动化系统</div>
+                        <div class="screenshot-desc">Markdown→HTML转换与素材上传</div>
+                        <div class="code-screenshot">
+<span class="code-keyword">from</span> fastapi <span class="code-keyword">import</span> FastAPI<br>
+<span class="code-keyword">from</span> wechat <span class="code-keyword">import</span> WeChatAPI<br>
+<br>
+app = FastAPI()<br>
+<br>
+<span class="code-comment"># 自动转换Markdown为微信HTML</span><br>
+@app.post(<span class="code-string">"/convert"</span>)<br>
+<span class="code-keyword">def</span> convert_markdown(content: str):<br>
+&nbsp;&nbsp;html = md2wechat(content)<br>
+&nbsp;&nbsp;<span class="code-keyword">return</span> {<span class="code-string">"html"</span>: html}<br>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 工业数据分析 -->
+                <div class="screenshot-card">
+                    <div class="screenshot-img" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">📊</div>
+                    <div class="screenshot-content">
+                        <div class="screenshot-title">工业数据分析工具</div>
+                        <div class="screenshot-desc">Modbus/OPC UA数据采集与可视化</div>
+                        <div class="code-screenshot">
+<span class="code-keyword">import</span> pymodbus<br>
+<span class="code-keyword">from</span> matplotlib <span class="code-keyword">import</span> pyplot<br>
+<br>
+<span class="code-comment"># 读取PLC数据</span><br>
+client = pymodbus.TcpClient(<span class="code-string">'192.168.1.100'</span>)<br>
+data = client.read_holding_registers(0, 10)<br>
+<br>
+<span class="code-comment"># 实时数据可视化</span><br>
+pyplot.plot(data.registers)<br>
+pyplot.show()<br>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 FORJEX 软件作品集 | <a href="index.html" style="color: var(--primary);">返回首页</a></p>
+        </div>
+    </footer>
+</body>
+</html>

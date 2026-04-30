@@ -1,0 +1,290 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>流量计及仪表 - FORJEX 技术资料站</title>
+    <meta name="description" content="FORJEX 流量计及仪表技术资料：电磁流量计、涡轮流量计、超声波流量计、涡街流量计、质量流量计、明渠流量计的工作原理与选型参考。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .nav-links .has-dropdown { position: relative; }
+        .nav-links .has-dropdown > a { display: flex; align-items: center; gap: 4px; }
+        .nav-links .has-dropdown > a::after { content: '▾'; font-size: .7rem; margin-left: 2px; }
+        .dropdown-menu {
+            position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+            background: var(--white); border: 1px solid var(--gray-300); border-radius: var(--radius-sm);
+            box-shadow: var(--shadow); min-width: 180px; padding: 8px 0;
+            opacity: 0; visibility: hidden; transition: var(--transition); z-index: 100;
+        }
+        .nav-links .has-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; }
+        .dropdown-menu a { display: block; padding: 10px 20px; font-size: .9rem; white-space: nowrap; }
+        .dropdown-menu a:hover { background: var(--primary-light); color: var(--primary); }
+        .dropdown-menu a::after { display: none; }
+
+        .detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+        .detail-card {
+            background: var(--white); border: 1px solid var(--gray-300); border-radius: var(--radius);
+            padding: 32px; transition: var(--transition);
+        }
+        .detail-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+        .detail-card .card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .detail-card .card-head .icon { font-size: 2rem; }
+        .detail-card .card-head h3 { font-size: 1.2rem; font-weight: 700; }
+        .detail-card .card-head .tag { font-size: .75rem; background: var(--primary-light); color: var(--primary); padding: 2px 10px; border-radius: 50px; font-weight: 600; }
+        .detail-card .sub-title { font-size: .85rem; font-weight: 600; color: var(--primary); margin: 12px 0 6px; }
+        .detail-card p { font-size: .9rem; color: var(--gray-500); line-height: 1.6; margin-bottom: 12px; }
+        .param-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+        .param-table th, .param-table td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--gray-300); }
+        .param-table th { background: var(--gray-100); font-weight: 600; color: var(--gray-700); width: 35%; }
+        .param-table td { color: var(--gray-700); }
+        .scene-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+        .scene-tags span { font-size: .78rem; background: var(--gray-100); color: var(--gray-700); padding: 3px 10px; border-radius: 4px; border: 1px solid var(--gray-300); }
+
+        @media (max-width: 768px) {
+            .detail-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚙️</span>
+                <span class="logo-text"><strong>FORJEX</strong> <span style="font-size:.8rem;font-weight:400;opacity:.7;">卓铸</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">首页</a></li>
+                <li class="has-dropdown">
+                    <a href="#">技术资料</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="products-training.html">教学培训设备</a></li>
+                        <li><a href="products-flowmeter.html">流量计及仪表</a></li>
+                        <li><a href="products-automation.html">自动化设备</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#learning">学习资源</a></li>
+                <li><a href="index.html#cases">应用案例</a></li>
+                <li><a href="about.html">关于本站</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" style="min-height:50vh; padding:140px 0 50px;">
+        <div class="hero-bg"><div class="hero-grid"></div></div>
+        <div class="container hero-content">
+            <div class="hero-badge">📊 流量计及仪表资料</div>
+            <h1>流量计与工业仪表<br><span class="highlight">技术原理与选型参考</span></h1>
+            <p class="hero-desc">整理电磁、涡轮、超声波、涡街、质量、明渠等工业流量计的技术原理、参数规格与选型指南。</p>
+        </div>
+    </section>
+
+    <!-- 非商业声明 -->
+    <section class="section">
+        <div class="container">
+            <div style="background:linear-gradient(135deg,#f0f7ff,#e8f4f8);border:1px solid #a0d4f7;border-radius:var(--radius-sm);padding:12px 20px;text-align:center;font-size:.85rem;color:var(--gray-600);">
+                ⚠️ <strong>非商业声明</strong>：本站为个人教育项目，所有内容仅供技术学习交流，不涉及任何商业销售行为。
+            </div>
+        </div>
+    </section>
+
+    <!-- 设备资料列表 -->
+    <section class="section" id="product-list">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">技术资料</span>
+                <h2>工业流量计技术档案</h2>
+                <p>覆盖液体、气体、蒸汽等多种介质的流量测量原理与参数参考</p>
+            </div>
+            <div class="detail-grid">
+                <!-- 电磁流量计 -->
+                <div class="detail-card">
+                    <div class="card-head">
+                        <span class="icon">⚡</span>
+                        <div class="product-img" style="width:80px;height:60px;background:linear-gradient(135deg,#f0f4f8,#e2e8f0);border-radius:8px;display:flex;align-items:center;justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+                        <h3>电磁流量计</h3>
+                        <span class="tag">热销</span>
+                    </div>
+                    <p class="sub-title">📐 工作原理</p>
+                    <p>基于法拉第电磁感应定律，导电液体在磁场中流动时切割磁力线产生感应电动势，通过测量电动势计算流量。无活动部件，压损极小。</p>
+                    <p class="sub-title">🎯 适用场景</p>
+                    <div class="scene-tags">
+                        <span>自来水</span><span>污水处理</span><span>化工浆液</span><span>食品饮料</span><span>造纸</span><span>冶金</span>
+                    </div>
+                    <table class="param-table">
+                        <tr><th>口径范围</th><td>DN10 ~ DN2000</td></tr>
+                        <tr><th>精度等级</th><td>±0.5%（可选 ±0.3%）</td></tr>
+                        <tr><th>电导率要求</th><td>≥ 5μS/cm</td></tr>
+                        <tr><th>衬里材质</th><td>橡胶 / PTFE / PFA / 陶瓷</td></tr>
+                        <tr><th>输出信号</th><td>4-20mA / 脉冲 / RS485 / HART</td></tr>
+                        <tr><th>防护等级</th><td>IP65 / IP68（潜水型）</td></tr>
+                    </table>
+                </div>
+
+                <!-- 涡轮流量计 -->
+                <div class="detail-card">
+                    <div class="card-head">
+                        <span class="icon">🌀</span>
+                        <div class="product-img" style="width:80px;height:60px;background:linear-gradient(135deg,#f0f4f8,#e2e8f0);border-radius:8px;display:flex;align-items:center;justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+                        <h3>涡轮流量计</h3>
+                    </div>
+                    <p class="sub-title">📐 工作原理</p>
+                    <p>流体推动涡轮叶片旋转，转速与流速成正比，通过磁电传感器检测叶片转速并换算为流量。响应快、精度高，适用于洁净低粘度液体。</p>
+                    <p class="sub-title">🎯 适用场景</p>
+                    <div class="scene-tags">
+                        <span>石油</span><span>柴油</span><span>天然气</span><span>纯水</span><span>溶剂</span><span>液压油</span>
+                    </div>
+                    <table class="param-table">
+                        <tr><th>口径范围</th><td>DN4 ~ DN200</td></tr>
+                        <tr><th>精度等级</th><td>±0.5% / ±1.0%</td></tr>
+                        <tr><th>量程比</th><td>10:1 ~ 20:1</td></tr>
+                        <tr><th>工作温度</th><td>-20℃ ~ +120℃</td></tr>
+                        <tr><th>输出信号</th><td>脉冲 / 4-20mA / RS485</td></tr>
+                        <tr><th>防爆等级</th><td>ExdⅡBT4（可选）</td></tr>
+                    </table>
+                </div>
+
+                <!-- 超声波流量计 -->
+                <div class="detail-card">
+                    <div class="card-head">
+                        <span class="icon">🔊</span>
+                        <div class="product-img" style="width:80px;height:60px;background:linear-gradient(135deg,#f0f4f8,#e2e8f0);border-radius:8px;display:flex;align-items:center;justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+                        <h3>超声波流量计</h3>
+                        <span class="tag">非接触</span>
+                    </div>
+                    <p class="sub-title">📐 工作原理</p>
+                    <p>利用超声波在流体中顺流和逆流传播的时间差（时差法）或多普勒频移（多普勒法）来测量流速。外夹式安装无需断管，对流体无干扰。</p>
+                    <p class="sub-title">🎯 适用场景</p>
+                    <div class="scene-tags">
+                        <span>大口径管道</span><span>自来水管网</span><span>暖通空调</span><span>冷却水</span><span>原油</span><span>非导电液体</span>
+                    </div>
+                    <table class="param-table">
+                        <tr><th>口径范围</th><td>DN15 ~ DN6000（外夹式）</td></tr>
+                        <tr><th>精度等级</th><td>±1.0%（时差法）/ ±2.0%（多普勒）</td></tr>
+                        <tr><th>安装方式</th><td>外夹式 / 插入式 / 管段式</td></tr>
+                        <tr><th>流体温度</th><td>-40℃ ~ +200℃（高温传感器）</td></tr>
+                        <tr><th>输出信号</th><td>4-20mA / 脉冲 / RS485 / Modbus</td></tr>
+                        <tr><th>数据功能</th><td>累积流量、热量计量（可选）</td></tr>
+                    </table>
+                </div>
+
+                <!-- 涡街流量计 -->
+                <div class="detail-card">
+                    <div class="card-head">
+                        <span class="icon">🌊</span>
+                        <div class="product-img" style="width:80px;height:60px;background:linear-gradient(135deg,#f0f4f8,#e2e8f0);border-radius:8px;display:flex;align-items:center;justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+                        <h3>涡街流量计</h3>
+                    </div>
+                    <p class="sub-title">📐 工作原理</p>
+                    <p>在流体中放置阻流体（旋涡发生体），流体经过时交替产生卡门涡街，涡街频率与流速成正比。通过检测旋涡频率计算流量，适用于液体、气体和蒸汽。</p>
+                    <p class="sub-title">🎯 适用场景</p>
+                    <div class="scene-tags">
+                        <span>饱和蒸汽</span><span>过热蒸汽</span><span>压缩空气</span><span>天然气</span><span>氮气</span><span>热水</span>
+                    </div>
+                    <table class="param-table">
+                        <tr><th>口径范围</th><td>DN15 ~ DN300</td></tr>
+                        <tr><th>精度等级</th><td>±1.0%（液体）/ ±1.5%（气体）</td></tr>
+                        <tr><th>工作温度</th><td>-40℃ ~ +350℃（高温型）</td></tr>
+                        <tr><th>工作压力</th><td>≤ 4.0MPa</td></tr>
+                        <tr><th>输出信号</th><td>4-20mA / 脉冲 / RS485 / HART</td></tr>
+                        <tr><th>材质</th><td>304 / 316L 不锈钢</td></tr>
+                    </table>
+                </div>
+
+                <!-- 质量流量计 -->
+                <div class="detail-card">
+                    <div class="card-head">
+                        <span class="icon">⚖️</span>
+                        <div class="product-img" style="width:80px;height:60px;background:linear-gradient(135deg,#f0f4f8,#e2e8f0);border-radius:8px;display:flex;align-items:center;justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+                        <h3>质量流量计（科里奥利）</h3>
+                        <span class="tag">高精度</span>
+                    </div>
+                    <p class="sub-title">📐 工作原理</p>
+                    <p>基于科里奥利力原理，流体在振动测量管中流动时产生相位偏移，偏移量与质量流量成正比。可同时测量质量流量、密度和温度，精度最高可达 ±0.1%。</p>
+                    <p class="sub-title">🎯 适用场景</p>
+                    <div class="scene-tags">
+                        <span>化工配料</span><span>石油贸易计量</span><span>食品灌装</span><span>制药</span><span>高粘度介质</span>
+                    </div>
+                    <table class="param-table">
+                        <tr><th>口径范围</th><td>DN3 ~ DN150</td></tr>
+                        <tr><th>质量流量精度</th><td>±0.1% ~ ±0.2%</td></tr>
+                        <tr><th>密度精度</th><td>±0.002 g/cm³</td></tr>
+                        <tr><th>量程比</th><td>20:1</td></tr>
+                        <tr><th>输出信号</th><td>4-20mA / 脉冲 / RS485 / HART / Modbus</td></tr>
+                        <tr><th>工作温度</th><td>-50℃ ~ +200℃</td></tr>
+                    </table>
+                </div>
+
+                <!-- 明渠流量计 -->
+                <div class="detail-card">
+                    <div class="card-head">
+                        <span class="icon">🏞️</span>
+                        <div class="product-img" style="width:80px;height:60px;background:linear-gradient(135deg,#f0f4f8,#e2e8f0);border-radius:8px;display:flex;align-items:center;justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+                        <h3>明渠流量计</h3>
+                    </div>
+                    <p class="sub-title">📐 工作原理</p>
+                    <p>通过超声波液位传感器测量明渠/堰槽中的液位高度，结合标准堰槽（巴歇尔槽、三角堰等）的水力特性曲线自动计算流量。非接触测量，安装简便。</p>
+                    <p class="sub-title">🎯 适用场景</p>
+                    <div class="scene-tags">
+                        <span>污水排放口</span><span>自来水渠道</span><span>灌溉渠道</span><span>工业排水</span><span>环保监测</span>
+                    </div>
+                    <table class="param-table">
+                        <tr><th>测量范围</th><td>0.01 ~ 9999 m³/h（依堰槽而定）</td></tr>
+                        <tr><th>液位精度</th><td>±2mm</td></tr>
+                        <tr><th>液位量程</th><td>0 ~ 2m / 0 ~ 5m / 0 ~ 10m</td></tr>
+                        <tr><th>传感器类型</th><td>超声波 / 雷达</td></tr>
+                        <tr><th>输出信号</th><td>4-20mA / RS485 / GPRS 远传</td></tr>
+                        <tr><th>防护等级</th><td>IP67</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">📚</span>
+                        <span class="logo-text"><strong>FORJEX</strong> <span style="font-size:.8rem;font-weight:400;opacity:.7;">技术资料站</span></span>
+                    </div>
+                    <p>FORJEX 工业自动化技术资料站 — 本站为个人教育项目，致力于整理和分享工业自动化领域的技术文档、设备资料与学习资源。</p>
+                    <p style="margin-top:8px;color:var(--gray-500);font-size:.85rem;">⚠️ 非商业项目 · 仅供技术学习交流</p>
+                </div>
+                <div class="footer-links">
+                    <h4>技术资料</h4>
+                    <ul>
+                        <li><a href="products-automation.html">自动化设备</a></li>
+                        <li><a href="products-training.html">教学培训设备</a></li>
+                        <li><a href="products-flowmeter.html">仪器仪表</a></li>
+                        <li><a href="products-flowmeter.html">流量计</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>学习支持</h4>
+                    <ul>
+                        <li><a href="index.html#cases">应用案例</a></li>
+                        <li><a href="index.html#learning">学习资源</a></li>
+                        <li><a href="about.html">关于本站</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 FORJEX 个人资料站 · 非商业教育项目 · 仅供技术学习交流</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+

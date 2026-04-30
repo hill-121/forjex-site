@@ -1,0 +1,307 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>自动化设备 - FORJEX 卓铸</title>
+    <meta name="description" content="FORJEX提供PLC控制器、变频器、伺服系统、HMI触摸屏、传感器、工业机器人配件等自动化设备，一站式工业自动化解决方案。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .nav-links .has-dropdown { position: relative; }
+        .nav-links .has-dropdown > a { display: flex; align-items: center; gap: 4px; }
+        .nav-links .has-dropdown > a::after { content: '▾'; font-size: .7rem; margin-left: 2px; }
+        .dropdown-menu {
+            position: absolute; top: 100%; left: 50%; transform: translateX(-50%);
+            background: var(--white); border: 1px solid var(--gray-300); border-radius: var(--radius-sm);
+            box-shadow: var(--shadow); min-width: 180px; padding: 8px 0;
+            opacity: 0; visibility: hidden; transition: var(--transition); z-index: 100;
+        }
+        .nav-links .has-dropdown:hover .dropdown-menu { opacity: 1; visibility: visible; }
+        .dropdown-menu a { display: block; padding: 10px 20px; font-size: .9rem; white-space: nowrap; }
+        .dropdown-menu a:hover { background: var(--primary-light); color: var(--primary); }
+        .dropdown-menu a::after { display: none; }
+
+        .detail-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 28px; }
+        .detail-card {
+            background: var(--white); border: 1px solid var(--gray-300); border-radius: var(--radius);
+            padding: 32px; transition: var(--transition);
+        }
+        .detail-card:hover { transform: translateY(-4px); box-shadow: var(--shadow-lg); border-color: var(--primary); }
+        .detail-card .card-head { display: flex; align-items: center; gap: 12px; margin-bottom: 16px; }
+        .detail-card .card-head .icon { font-size: 2rem; }
+        .detail-card .card-head h3 { font-size: 1.2rem; font-weight: 700; }
+        .detail-card .card-head .tag { font-size: .75rem; background: var(--primary-light); color: var(--primary); padding: 2px 10px; border-radius: 50px; font-weight: 600; }
+        .detail-card p { font-size: .9rem; color: var(--gray-500); line-height: 1.6; margin-bottom: 12px; }
+        .brand-tags { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+        .brand-tags span { font-size: .78rem; background: var(--primary-light); color: var(--primary); padding: 3px 10px; border-radius: 4px; font-weight: 500; }
+        .param-table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+        .param-table th, .param-table td { padding: 8px 12px; text-align: left; border-bottom: 1px solid var(--gray-300); }
+        .param-table th { background: var(--gray-100); font-weight: 600; color: var(--gray-700); width: 35%; }
+        .param-table td { color: var(--gray-700); }
+
+        @media (max-width: 768px) {
+            .detail-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">⚙️</span>
+                <span class="logo-text"><strong>FORJEX</strong> <span style="font-size:.8rem;font-weight:400;opacity:.7;">卓铸</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="index.html">首页</a></li>
+                <li class="has-dropdown">
+                    <a href="#">产品中心</a>
+                    <ul class="dropdown-menu">
+                        <li><a href="products-training.html">教学培训设备</a></li>
+                        <li><a href="products-flowmeter.html">流量计及仪表</a></li>
+                        <li><a href="products-automation.html">自动化设备</a></li>
+                    </ul>
+                </li>
+                <li><a href="index.html#advantages">核心优势</a></li>
+                <li><a href="index.html#cases">应用案例</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="#contact-section">联系我们</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero" style="min-height:60vh; padding:140px 0 60px;">
+        <div class="hero-bg"><div class="hero-grid"></div></div>
+        <div class="container hero-content">
+            <div class="hero-badge">🤖 自动化设备</div>
+            <h1>工业自动化核心装备<br><span class="highlight">驱动智能制造升级</span></h1>
+            <p class="hero-desc">提供 PLC 控制器、变频器、伺服系统、HMI 触摸屏、传感器及工业机器人配件等全系列自动化产品，代理国内外知名品牌。</p>
+            <div class="hero-actions">
+                <a href="#contact-section" class="btn btn-primary">获取报价</a>
+                <a href="#product-list" class="btn btn-outline">查看产品</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品列表 -->
+    <section class="section" id="product-list">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">产品系列</span>
+                <h2>自动化核心部件</h2>
+                <p>覆盖控制层、驱动层、传感层全链路产品</p>
+            </div>
+            <div class="detail-grid">
+                <!-- PLC控制器 -->
+                <div class="detail-card">
+                    <div class="card-head">
+                        <span class="icon">🎛️</span>
+                        <div class="product-img" style="width:80px;height:60px;background:linear-gradient(135deg,#f0f4f8,#e2e8f0);border-radius:8px;display:flex;align-items:center;justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+                        <h3>PLC 控制器</h3>
+                        <span class="tag">核心产品</span>
+                    </div>
+                    <p>工业自动化大脑，支持逻辑控制、运动控制、过程控制等多种应用场景。提供从小型一体机到大型模块化系统的全系列产品选型与技术支持。</p>
+                    <p style="font-weight:600;color:var(--gray-700);font-size:.85rem;margin-top:8px;">代理品牌</p>
+                    <div class="brand-tags">
+                        <span>Siemens</span><span>三菱 Mitsubishi</span><span>台达 DELTA</span><span>OMRON</span><span>Schneider</span><span>汇川</span>
+                    </div>
+                    <p style="font-size:.8rem;color:var(--gray-500);margin-bottom:12px;">💰 参考价格区间：<strong style="color:var(--primary);">¥800 ~ ¥80,000+</strong>（小型一体机至大型模块化系统，因品牌和配置差异较大）</p>
+                    <table class="param-table">
+                        <tr><th>小型 PLC</th><td>西门子 S7-200 SMART / 三菱 FX5U / 台达 DVP</td></tr>
+                        <tr><th>中型 PLC</th><td>西门子 S7-1200 / 三菱 iQ-R / 汇川 H5U</td></tr>
+                        <tr><th>大型 PLC</th><td>西门子 S7-1500 / 三菱 Q 系列 / Schneider M580</td></tr>
+                        <tr><th>通信协议</th><td>PROFINET / EtherNet/IP / Modbus / CANopen</td></tr>
+                        <tr><th>编程语言</th><td>梯形图 / ST / FBD / SFC</td></tr>
+                    </table>
+                </div>
+
+                <!-- 变频器 -->
+                <div class="detail-card">
+                    <div class="card-head">
+                        <span class="icon">⚙️</span>
+                        <div class="product-img" style="width:80px;height:60px;background:linear-gradient(135deg,#f0f4f8,#e2e8f0);border-radius:8px;display:flex;align-items:center;justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+                        <h3>变频器</h3>
+                    </div>
+                    <p>通过改变电机供电频率实现调速节能，广泛应用于风机、水泵、传送带、搅拌机等设备。提供通用型、矢量型及专用型变频器，功率覆盖 0.2kW-630kW。</p>
+                    <p style="font-weight:600;color:var(--gray-700);font-size:.85rem;margin-top:8px;">代理品牌</p>
+                    <div class="brand-tags">
+                        <span>ABB</span><span>Siemens</span><span>台达 DELTA</span><span>汇川</span><span>丹佛斯 Danfoss</span>
+                    </div>
+                    <p style="font-size:.8rem;color:var(--gray-500);margin-bottom:12px;">💰 参考价格区间：<strong style="color:var(--primary);">¥500 ~ ¥50,000+</strong>（0.2kW小型机至630kW大功率，品牌差异显著）</p>
+                    <table class="param-table">
+                        <tr><th>功率范围</th><td>0.2kW ~ 630kW</td></tr>
+                        <tr><th>电压等级</th><td>单相 220V / 三相 380V / 690V</td></tr>
+                        <tr><th>控制方式</th><td>V/F 控制 / 无感矢量 / 闭环矢量</td></tr>
+                        <tr><th>通信接口</th><td>RS485 / Modbus / PROFIBUS / CAN</td></tr>
+                        <tr><th>防护等级</th><td>IP20 / IP54 / IP65</td></tr>
+                        <tr><th>典型应用</th><td>风机水泵节能 / 传送带调速 / 恒压供水</td></tr>
+                    </table>
+                </div>
+
+                <!-- 伺服系统 -->
+                <div class="detail-card">
+                    <div class="card-head">
+                        <span class="icon">🎯</span>
+                        <div class="product-img" style="width:80px;height:60px;background:linear-gradient(135deg,#f0f4f8,#e2e8f0);border-radius:8px;display:flex;align-items:center;justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+                        <h3>伺服系统</h3>
+                        <span class="tag">高精度</span>
+                    </div>
+                    <p>伺服驱动器 + 伺服电机组合，实现高精度位置、速度和力矩控制。适用于数控机床、包装机械、机器人、电子设备等对定位精度要求高的场合。</p>
+                    <p style="font-weight:600;color:var(--gray-700);font-size:.85rem;margin-top:8px;">代理品牌</p>
+                    <div class="brand-tags">
+                        <span>三菱 MR-J/J4</span><span>安川 Σ-7</span><span>松下 A6</span><span>汇川 IS620P</span><span>台达 A2/B3</span>
+                    </div>
+                    <p style="font-size:.8rem;color:var(--gray-500);margin-bottom:12px;">💰 参考价格区间：<strong style="color:var(--primary);">¥800 ~ ¥35,000+</strong>（50W小功率至15kW大功率套装，含驱动器+电机）</p>
+                    <table class="param-table">
+                        <tr><th>功率范围</th><td>50W ~ 15kW</td></tr>
+                        <tr><th>编码器分辨率</th><td>17bit ~ 24bit 绝对值</td></tr>
+                        <tr><th>响应频率</th><td>≥ 2.0kHz（速度环）</td></tr>
+                        <tr><th>通信总线</th><td>SSCNET III / EtherCAT / PROFINET</td></tr>
+                        <tr><th>控制模式</th><td>位置 / 速度 / 力矩 / 混合模式</td></tr>
+                        <tr><th>典型应用</th><td>数控机床 / 贴片机 / 包装机械 / 机器人关节</td></tr>
+                    </table>
+                </div>
+
+                <!-- HMI触摸屏 -->
+                <div class="detail-card">
+                    <div class="card-head">
+                        <span class="icon">📱</span>
+                        <div class="product-img" style="width:80px;height:60px;background:linear-gradient(135deg,#f0f4f8,#e2e8f0);border-radius:8px;display:flex;align-items:center;justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+                        <h3>HMI 触摸屏</h3>
+                    </div>
+                    <p>人机交互界面，用于设备参数设定、状态监控、报警显示和数据记录。支持与主流 PLC 品牌无缝通信，提供丰富的画面组件和脚本功能。</p>
+                    <p style="font-weight:600;color:var(--gray-700);font-size:.85rem;margin-top:8px;">代理品牌</p>
+                    <div class="brand-tags">
+                        <span>威纶通 Weintek</span><span>西门子 KTP</span><span>三菱 GOT</span><span>昆仑通态</span><span>台达 DOP</span>
+                    </div>
+                    <p style="font-size:.8rem;color:var(--gray-500);margin-bottom:12px;">💰 参考价格区间：<strong style="color:var(--primary);">¥500 ~ ¥15,000+</strong>（4.3寸基础款至15.6寸高性能型号）</p>
+                    <table class="param-table">
+                        <tr><th>屏幕尺寸</th><td>4.3″ / 7″ / 10.1″ / 12″ / 15″ / 15.6″</td></tr>
+                        <tr><th>分辨率</th><td>480×272 ~ 1920×1080</td></tr>
+                        <tr><th>触控方式</th><td>电阻式 / 电容式多点触控</td></tr>
+                        <tr><th>处理器</th><td>ARM Cortex-A 系列 / x86</td></tr>
+                        <tr><th>通信接口</th><td>RS232 / RS485 / Ethernet / USB</td></tr>
+                        <tr><th>防护等级</th><td>IP65 前面板</td></tr>
+                    </table>
+                </div>
+
+                <!-- 传感器 -->
+                <div class="detail-card">
+                    <div class="card-head">
+                        <span class="icon">📡</span>
+                        <div class="product-img" style="width:80px;height:60px;background:linear-gradient(135deg,#f0f4f8,#e2e8f0);border-radius:8px;display:flex;align-items:center;justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+                        <h3>传感器</h3>
+                    </div>
+                    <p>工业现场的"感官"，实时检测位置、温度、压力、流量、液位等物理量并转换为电信号。涵盖光电、接近、压力、温度、位移等全品类传感器。</p>
+                    <p style="font-weight:600;color:var(--gray-700);font-size:.85rem;margin-top:8px;">代理品牌</p>
+                    <div class="brand-tags">
+                        <span>OMRON</span><span>SICK</span><span>KEYENCE</span><span>ifm</span><span>巴鲁夫 Balluff</span><span>图尔克 Turck</span>
+                    </div>
+                    <p style="font-size:.8rem;color:var(--gray-500);margin-bottom:12px;">💰 参考价格区间：<strong style="color:var(--primary);">¥50 ~ ¥8,000+</strong>（基础光电/接近传感器至高精度位移、压力传感器）</p>
+                    <table class="param-table">
+                        <tr><th>光电传感器</th><td>对射式 / 反射式 / 漫反射式，检测距离可达 30m</td></tr>
+                        <tr><th>接近传感器</th><td>电感式 / 电容式，检测距离 2-25mm</td></tr>
+                        <tr><th>压力传感器</th><td>0-60MPa，精度 ±0.5% FS</td></tr>
+                        <tr><th>温度传感器</th><td>PT100 / K型热电偶，-200~+1800℃</td></tr>
+                        <tr><th>位移传感器</th><td>LVDT / 磁致伸缩 / 激光测距</td></tr>
+                        <tr><th>输出信号</th><td>NPN/PNP / 4-20mA / IO-Link</td></tr>
+                    </table>
+                </div>
+
+                <!-- 工业机器人配件 -->
+                <div class="detail-card">
+                    <div class="card-head">
+                        <span class="icon">🦾</span>
+                        <div class="product-img" style="width:80px;height:60px;background:linear-gradient(135deg,#f0f4f8,#e2e8f0);border-radius:8px;display:flex;align-items:center;justify-content:center;"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></div>
+                        <h3>工业机器人配件</h3>
+                    </div>
+                    <p>为工业机器人系统提供末端执行器、减速机、示教器、控制柜配件及各类备品备件。支持 ABB、FANUC、KUKA、安川等主流机器人品牌。</p>
+                    <p style="font-weight:600;color:var(--gray-700);font-size:.85rem;margin-top:8px;">适配品牌</p>
+                    <div class="brand-tags">
+                        <span>ABB</span><span>FANUC</span><span>KUKA</span><span>安川 YASKAWA</span><span>埃斯顿</span><span>汇川</span>
+                    </div>
+                    <p style="font-size:.8rem;color:var(--gray-500);margin-bottom:12px;">💰 参考价格区间：<strong style="color:var(--primary);">¥200 ~ ¥50,000+</strong>（线缆附件至精密减速机、末端执行器等核心部件）</p>
+                    <table class="param-table">
+                        <tr><th>末端执行器</th><td>气动夹爪 / 电动夹爪 / 真空吸盘 / 焊枪</td></tr>
+                        <tr><th>精密减速机</th><td>RV 减速机 / 谐波减速机（国产替代可选）</td></tr>
+                        <tr><th>示教器配件</th><td>触摸屏、按键板、电缆、保护壳</td></tr>
+                        <tr><th>控制柜备件</th><td>伺服驱动板、I/O 模块、电源模块、风扇</td></tr>
+                        <tr><th>安全设备</th><td>安全光栅 / 安全继电器 / 操作面板</td></tr>
+                        <tr><th>线缆附件</th><td>机器人专用电缆、连接器、拖链</td></tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="section" id="contact-section" style="background: linear-gradient(135deg, #0f0c29, #1a1a3e); color: #fff;">
+        <div class="container" style="text-align:center;">
+            <div class="section-header" style="margin-bottom:32px;">
+                <span class="section-tag" style="background:rgba(26,115,232,.2);color:#7bb8f5;">联系我们</span>
+                <h2 style="color:#fff;">获取自动化设备选型与报价</h2>
+                <p style="color:rgba(255,255,255,.6);">资深工程师为您推荐最优品牌与型号组合</p>
+            </div>
+            <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;">
+                <a href="index.html#contact" class="btn btn-primary">在线询价</a>
+                <a href="tel:17725356520" class="btn btn-outline">电话咨询 17725356520</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <div class="logo">
+                        <span class="logo-icon">⚙️</span>
+                        <span class="logo-text"><strong>FORJEX</strong> <span style="font-size:.8rem;font-weight:400;opacity:.7;">卓铸</span></span>
+                    </div>
+                    <p>FORJEX 卓铸 — 铸造工业未来。专注自动化设备、培训设备与仪器仪表，为工业客户提供可靠的产品与技术服务。</p>
+                </div>
+                <div class="footer-links">
+                    <h4>产品中心</h4>
+                    <ul>
+                        <li><a href="products-automation.html">自动化设备</a></li>
+                        <li><a href="products-training.html">培训设备</a></li>
+                        <li><a href="products-flowmeter.html">仪器仪表</a></li>
+                        <li><a href="products-flowmeter.html">流量计</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>服务支持</h4>
+                    <ul>
+                        <li><a href="index.html#cases">应用案例</a></li>
+                        <li><a href="index.html#advantages">服务优势</a></li>
+                        <li><a href="index.html#contact">在线咨询</a></li>
+                        <li><a href="index.html#contact">售后服务</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4>关于我们</h4>
+                    <ul>
+                        <li><a href="about.html">公司简介</a></li>
+                        <li><a href="about.html">合作伙伴</a></li>
+                        <li><a href="index.html#contact">联系我们</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 FORJEX 卓铸 版权所有 | <a href="#">粤ICP备XXXXXXXX号</a></p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
+

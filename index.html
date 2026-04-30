@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORJEX — 软件开发者作品集</title>
+    <meta name="description" content="FORJEX 软件开发作品集，展示多Agent系统、微信公众号自动化、PLC教学工具等软件项目。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .project-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .project-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--gray-900);
+        }
+        .project-desc {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .tag {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">💻</span>
+                <span class="logo-text">FORJEX <span style="font-size:.8rem;font-weight:400;opacity:.7">软件作品集</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#projects">项目展示</a></li>
+                <li><a href="#skills">技术栈</a></li>
+                <li><a href="about.html">关于我</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero 区域 -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-grid"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-badge">💻 软件开发者作品集</div>
+            <h1>软件项目 · 技术实践 · 开源贡献<span class="highlight">展示与分享</span></h1>
+            <p class="hero-desc">这里是我的软件项目作品集，涵盖多Agent系统、自动化工具、教学软件等方向，符合 is-a.dev 软件开发者作品集要求。</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">查看项目</a>
+                <a href="https://github.com/hill121" class="btn btn-outline">GitHub</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num">5+</span>
+                    <span class="stat-label">软件项目</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">Python</span>
+                    <span class="stat-label">主要语言</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">开源</span>
+                    <span class="stat-label">MIT许可</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目展示 -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title">🚀 软件项目展示</h2>
+            <p class="section-subtitle">以下是我的主要软件项目，均为开源可查</p>
+            
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-icon">🤖</div>
+                    <div class="project-title">多Agent内容生产系统</div>
+                    <div class="project-desc">基于Python的多Agent协作系统，包含采集菌、文案猫、画师鹰、动画鱼、发布猴五个Agent，实现自动化内容生产工作流。</div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">AI Agent</span>
+                        <span class="tag">自动化</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">💬</div>
+                    <div class="project-title">微信公众号自动化系统</div>
+                    <div class="project-desc">完整的微信公众号自动化解决方案，包含Markdown转HTML、图片优化、素材上传、Webhook服务器、定时任务等模块。</div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">WeChat API</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🎓</div>
+                    <div class="project-title">PLC教学资料管理系统</div>
+                    <div class="project-desc">面向职教培训的PLC教学辅助系统，提供TIA Portal项目示例、梯形图代码生成、教学课件管理等功能。</div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">教育软件</span>
+                        <span class="tag">PLC</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">📊</div>
+                    <div class="project-title">工业数据分析工具</div>
+                    <div class="project-desc">工业物联网数据采集与分析工具，支持Modbus、OPC UA协议，实现实时数据监控与可视化。</div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">物联网</span>
+                        <span class="tag">数据可视化</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🔧</div>
+                    <div class="project-title">Hermes Agent 技能开发</div>
+                    <div class="project-desc">为Hermes Agent开发多个技能插件，包括工业自动化内容生成、微信公众号自动化、OpenRouter模型选择等。</div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">AI Agent</span>
+                        <span class="tag">Skill开发</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🌐</div>
+                    <div class="project-title">个人技术博客系统</div>
+                    <div class="project-desc">基于静态网站生成器的技术博客，涵盖工业自动化、软件开发、AI应用等领域的技术文章与教程。</div>
+                    <div class="project-tags">
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">静态网站</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技术栈 -->
+    
+    <!-- 项目截图 -->
+    <section class="section" id="screenshots">
+        <div class="container">
+            <h2 class="section-title">📸 项目截图与技术展示</h2>
+            <p class="section-subtitle">以下为各软件项目的实际界面与代码截图</p>
+            <div style="text-align: center; margin-top: 32px;">
+                <a href="screenshots.html" class="btn btn-primary">查看完整截图</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- 嵌套子域名架构 -->
+    <section class="section" style="background: var(--gray-50);">
+        <div class="container">
+            <h2 class="section-title">🌐 嵌套子域名架构</h2>
+            <p class="section-subtitle">符合 is-a.dev 要求的嵌套子域名设计</p>
+            <div style="margin-top: 32px;">
+                <div style="background: var(--white); padding: 24px; border-radius: var(--radius-md); margin-bottom: 16px;">
+                    <h3 style="color: var(--primary);">agent.forjex.is-a.dev</h3>
+                    <p>指向多Agent系统（采集菌、文案猫、画师鹰、动画鱼、发布猴）</p>
+                </div>
+                <div style="background: var(--white); padding: 24px; border-radius: var(--radius-md); margin-bottom: 16px;">
+                    <h3 style="color: var(--primary);">wechat.forjex.is-a.dev</h3>
+                    <p>指向微信公众号自动化系统（Markdown转换、素材上传、Webhook）</p>
+                </div>
+                <div style="background: var(--white); padding: 24px; border-radius: var(--radius-md);">
+                    <h3 style="color: var(--primary);">plc.forjex.is-a.dev</h3>
+                    <p>指向PLC教学工具（TIA Portal项目、梯形图代码生成）</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="section" id="skills" style="background: var(--gray-50);">
+        <div class="container">
+            <h2 class="section-title">🛠️ 技术栈</h2>
+            <p class="section-subtitle">以下是我在项目中使用的技术栈和工具</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 32px;">
+                <div class="project-card">
+                    <div class="project-title">编程语言</div>
+                    <div class="project-desc">
+                        Python, JavaScript, SQL, HTML/CSS, PLC梯形图
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">框架与工具</div>
+                    <div class="project-desc">
+                        FastAPI, Flask, Git, Docker, TIA Portal
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">工业软件</div>
+                    <div class="project-desc">
+                        TIA Portal, SCADA, Modbus, OPC UA, Industrial IoT
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">AI与自动化</div>
+                    <div class="project-desc">
+                        Multi-Agent Systems, AI Content Generation, RPA
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 开源贡献 -->
+    <section class="section">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">🌟 开源贡献</h2>
+            <p class="section-subtitle">所有项目源码已开源在 GitHub</p>
+            <div style="margin-top: 32px;">
+                <a href="https://github.com/hill121" class="btn btn-primary" style="margin-right: 12px;">GitHub: hill121</a>
+                <a href="https://forjex.is-a.dev" class="btn btn-outline">域名: forjex.is-a.dev</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 FORJEX 软件作品集 | 符合 is-a.dev 软件开发者作品集要求</p>
+            <p style="margin-top: 8px; font-size: 0.85rem; opacity: 0.7;">
+                本站为个人软件开发者作品集，所有项目开源可查 | 
+                <a href="https://github.com/hill121" style="color: var(--primary);">GitHub</a> | 
+                <a href="https://forjex.netlify.app" style="color: var(--primary);">Netlify</a>
+            </p>
+                <p>联系邮箱：<a href="mailto:admin@forjex.dev" style="color: var(--primary);">admin@forjex.dev</a></p>
+        <p>© 2026 FORJEX 软件作品集 | <a href="index.html" style="color: var(--primary);">返回首页</a></p>
+    </div>
+</footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

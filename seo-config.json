@@ -1,0 +1,149 @@
+{
+  "siteMeta": {
+    "title": "FORJEX-教学设备|流量计|工业自动化设备专业供应商",
+    "description": "FORJEX专注教学实训设备、流量计、工业自动化设备研发与销售。提供PLC实训台、电磁流量计、超声波流量计、职业培训装置等产品，服务院校与企业。",
+    "keywords": "教学设备,职业培训设备,PLC实训台,流量计,电磁流量计,超声波流量计,自动化设备,工业自动化,实训装置,教学仪器,FORJEX",
+    "author": "FORJEX",
+    "ogTitle": "FORJEX - 教学设备·流量计·工业自动化设备专业供应商",
+    "ogDescription": "专业提供PLC实训台、电磁流量计、超声波流量计、工业自动化设备等产品。服务全国院校与企业，品质可靠，售后完善。",
+    "ogType": "website",
+    "ogImage": "/og-image.png"
+  },
+  "structuredData": {
+    "organization": {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "FORJEX",
+      "description": "教学实训设备、流量计及工业自动化设备专业供应商",
+      "url": "https://www.zhikongkeji.com",
+      "logo": "/logo.png",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "telephone": "+86-xxx-xxxx-xxxx",
+        "contactType": "customer service",
+        "availableLanguage": "Chinese"
+      },
+      "sameAs": []
+    },
+    "productCategory": [
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "教学实训设备",
+        "description": "PLC实训台、电工实训台、机电一体化实训装置等职业培训教学设备",
+        "category": "教学设备",
+        "brand": {
+          "@type": "Brand",
+          "name": "FORJEX"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "流量计",
+        "description": "电磁流量计、超声波流量计、涡轮流量计等工业流量测量仪表",
+        "category": "仪器仪表",
+        "brand": {
+          "@type": "Brand",
+          "name": "FORJEX"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "工业自动化设备",
+        "description": "PLC控制器、变频器、传感器、工业控制系统等自动化产品",
+        "category": "工业自动化",
+        "brand": {
+          "@type": "Brand",
+          "name": "FORJEX"
+        }
+      }
+    ],
+    "breadcrumb": [
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "首页",
+            "item": "https://www.zhikongkeji.com/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "教学实训设备",
+            "item": "https://www.zhikongkeji.com/products-training.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "流量计",
+            "item": "https://www.zhikongkeji.com/products-flowmeter.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "工业自动化设备",
+            "item": "https://www.zhikongkeji.com/products-automation.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "关于我们",
+            "item": "https://www.zhikongkeji.com/about.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "联系我们",
+            "item": "https://www.zhikongkeji.com/contact.html"
+          }
+        ]
+      }
+    ]
+  },
+  "robotsTxt": "User-agent: *\nAllow: /\nDisallow: /admin/\nDisallow: /api/\nDisallow: /tmp/\n\nSitemap: https://www.zhikongkeji.com/sitemap.xml",
+  "sitemapEntries": [
+    { "url": "/", "priority": "1.0", "changefreq": "weekly" },
+    { "url": "/products-training.html", "priority": "0.9", "changefreq": "weekly" },
+    { "url": "/products-flowmeter.html", "priority": "0.9", "changefreq": "weekly" },
+    { "url": "/products-automation.html", "priority": "0.9", "changefreq": "weekly" },
+    { "url": "/about.html", "priority": "0.7", "changefreq": "monthly" },
+    { "url": "/contact.html", "priority": "0.8", "changefreq": "monthly" }
+  ],
+  "pageSEO": {
+    "index": {
+      "title": "FORJEX-教学设备|流量计|工业自动化设备专业供应商",
+      "description": "FORJEX专注教学实训设备、流量计、工业自动化设备研发与销售。提供PLC实训台、电磁流量计、超声波流量计、职业培训装置等产品，服务院校与企业。",
+      "h1": "FORJEX — 教学设备·流量计·工业自动化设备专业供应商"
+    },
+    "products-training": {
+      "title": "教学实训设备-PLC实训台|职业培训设备|实训装置-FORJEX",
+      "description": "FORJEX提供各类教学实训设备，包括PLC实训台、电工实训台、机电一体化实训装置、教学仪器等，适用于职业院校及培训机构。",
+      "h1": "教学实训设备"
+    },
+    "products-flowmeter": {
+      "title": "流量计-电磁流量计|超声波流量计|工业流量仪表-FORJEX",
+      "description": "FORJEX供应各类工业流量计，包括电磁流量计、超声波流量计、涡轮流量计等，精度高、稳定可靠，广泛应用于工业自动化领域。",
+      "h1": "流量计产品"
+    },
+    "products-automation": {
+      "title": "工业自动化设备-PLC控制器|变频器|传感器-FORJEX",
+      "description": "FORJEX提供工业自动化设备及解决方案，包括PLC控制器、变频器、传感器、人机界面等，助力企业实现智能制造升级。",
+      "h1": "工业自动化设备"
+    },
+    "about": {
+      "title": "关于我们-FORJEX|教学设备与自动化设备供应商",
+      "description": "FORJEX是一家专注于教学实训设备、流量计及工业自动化设备的技术型企业，致力于为院校和企业提供优质产品与专业服务。",
+      "h1": "关于FORJEX"
+    },
+    "contact": {
+      "title": "联系我们-FORJEX|产品咨询与合作",
+      "description": "联系FORJEX，咨询教学设备、流量计、工业自动化设备产品信息及合作事宜。我们竭诚为您服务。",
+      "h1": "联系我们"
+    }
+  }
+}
