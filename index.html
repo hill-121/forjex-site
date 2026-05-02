@@ -4,176 +4,286 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FORJEX — 软件开发者作品集</title>
+    <meta name="description" content="FORJEX 软件开发作品集，展示多Agent系统、微信公众号自动化、PLC教学工具等软件项目。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
     <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; line-height: 1.6; color: #333; background: #f5f7fa; }
-        header { background: #1a1a2e; color: white; padding: 2rem; text-align: center; }
-        nav { background: #16213e; padding: 1rem; text-align: center; }
-        nav a { color: #eee; margin: 0 1rem; text-decoration: none; font-size: 0.9rem; }
-        .hero { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 4rem 2rem; text-align: center; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
-        .section { margin: 3rem 0; }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
-        .card { border: 1px solid #ddd; border-radius: 8px; padding: 1.5rem; background: #f9f9f9; }
-        .card h3 { color: #667eea; margin-bottom: 1rem; }
-        .badge { display: inline-block; background: #667eea; color: white; padding: 0.2rem 0.8rem; border-radius: 12px; font-size: 0.8rem; margin: 0.2rem; }
-        .subdomain-demo { background: #f0f4ff; border-left: 4px solid #667eea; padding: 1.5rem; margin: 2rem 0; border-radius: 4px; }
-        .subdomain-demo code { background: #fff; padding: 0.3rem 0.6rem; border-radius: 3px; color: #667eea; font-weight: bold; }
-        footer { background: #1a1a2e; color: white; text-align: center; padding: 2rem; margin-top: 3rem; }
-        a { color: #667eea; text-decoration: none; }
-        a:hover { text-decoration: underline; }
-        .project-list { list-style: none; padding: 0; }
-        .project-list li { padding: 0.8rem; margin: 0.5rem 0; background: white; border-radius: 4px; border: 1px solid #e0e0e0; }
+        .project-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .project-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .project-icon {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: var(--gray-900);
+        }
+        .project-desc {
+            color: var(--gray-600);
+            font-size: 0.9rem;
+            line-height: 1.6;
+            margin-bottom: 12px;
+        }
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+        .tag {
+            background: var(--primary-light);
+            color: var(--primary);
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 24px;
+            margin-top: 32px;
+        }
     </style>
 </head>
 <body>
-    <header style="display: flex; align-items: center; justify-content: center; gap: 1rem;">
-        <img src="images/logo.svg" alt="FORJEX Logo" height="50">
-        <div>
-            <h1 style="margin: 0;">FORJEX</h1>
-            <p style="margin: 0; font-size: 0.9rem; opacity: 0.8;">软件开发者作品集 · 嵌套子域名架构</p>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <span class="logo-icon">💻</span>
+                <span class="logo-text">FORJEX <span style="font-size:.8rem;font-weight:400;opacity:.7">软件作品集</span></span>
+            </a>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home">首页</a></li>
+                <li><a href="#projects">项目展示</a></li>
+                <li><a href="#skills">技术栈</a></li>
+                <li><a href="about.html">关于我</a></li>
+            </ul>
+            <button class="mobile-toggle" id="mobileToggle" aria-label="菜单">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-    </header>
-    <nav>
-        <a href="#about">关于我</a>
-        <a href="#architecture">子域名架构</a>
-        <a href="#projects">项目作品</a>
-        <a href="#skills">技术栈</a>
-        <a href="https://github.com/hill-121" target="_blank">GitHub</a>
     </nav>
 
-    <div class="hero">
-        <h2>软件工程项目作品集</h2>
-        <p>所有项目部署在嵌套子域名 · 符合 is-a.dev 子域名架构要求</p>
-        <p style="margin-top: 1rem;">
-            <a href="https://github.com/hill-121" style="background: white; color: #667eea; padding: 0.8rem 2rem; border-radius: 25px; text-decoration: none; display: inline-block; font-weight: bold;">查看 GitHub →</a>
-        </p>
+    <!-- Hero 区域 -->
+    <section class="hero" id="home">
+        <div class="hero-bg">
+            <div class="hero-grid"></div>
+        </div>
+        <div class="container hero-content">
+            <div class="hero-badge">💻 软件开发者作品集</div>
+            <h1>软件项目 · 技术实践 · 开源贡献<span class="highlight">展示与分享</span></h1>
+            <p class="hero-desc">这里是我的软件项目作品集，涵盖多Agent系统、自动化工具、教学软件等方向，符合 is-a.dev 软件开发者作品集要求。</p>
+            <div class="hero-actions">
+                <a href="#projects" class="btn btn-primary">查看项目</a>
+                <a href="https://github.com/hill121" class="btn btn-outline">GitHub</a>
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <span class="stat-num">5+</span>
+                    <span class="stat-label">软件项目</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">Python</span>
+                    <span class="stat-label">主要语言</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-num">开源</span>
+                    <span class="stat-label">MIT许可</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目展示 -->
+    <section class="section" id="projects">
+        <div class="container">
+            <h2 class="section-title">🚀 软件项目展示</h2>
+            <p class="section-subtitle">以下是我的主要软件项目，均为开源可查</p>
+            
+            <div class="projects-grid">
+                    <div class="project-card">
+                        <img src="images/agent-icon.svg" alt="多Agent系统" style="width:100%;max-width:300px;margin-bottom:1rem;">
+                        <div class="project-icon">🤖</div>
+                    <div class="project-title">多Agent内容生产系统</div>
+                    <div class="project-desc">基于Python的多Agent协作系统，包含采集菌、文案猫、画师鹰、动画鱼、发布猴五个Agent，实现自动化内容生产工作流。</div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">AI Agent</span>
+                        <span class="tag">自动化</span>
+                    </div>
+                </div>
+
+                    <div class="project-card">
+                        <img src="images/wechat-icon.svg" alt="微信自动化" style="width:100%;max-width:300px;margin-bottom:1rem;">
+                        <div class="project-icon">💬</div>
+                    <div class="project-title">微信公众号自动化系统</div>
+                    <div class="project-desc">完整的微信公众号自动化解决方案，包含Markdown转HTML、图片优化、素材上传、Webhook服务器、定时任务等模块。</div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">FastAPI</span>
+                        <span class="tag">WeChat API</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/plc-icon.svg" alt="PLC教学" style="width:100%;max-width:300px;margin-bottom:1rem;">
+                    <div class="project-icon">🎓</div>
+                    <div class="project-title">PLC教学资料管理系统</div>
+                    <div class="project-desc">面向职教培训的PLC教学辅助系统，提供TIA Portal项目示例、梯形图代码生成、教学课件管理等功能。</div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">教育软件</span>
+                        <span class="tag">PLC</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img src="images/hero-bg.svg" alt="数据分析" style="width:100%;max-width:300px;margin-bottom:1rem;">
+                    <div class="project-icon">📊</div>
+                    <div class="project-title">工业数据分析工具</div>
+                    <div class="project-desc">工业物联网数据采集与分析工具，支持Modbus、OPC UA协议，实现实时数据监控与可视化。</div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">物联网</span>
+                        <span class="tag">数据可视化</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🔧</div>
+                    <div class="project-title">Hermes Agent 技能开发</div>
+                    <div class="project-desc">为Hermes Agent开发多个技能插件，包括工业自动化内容生成、微信公众号自动化、OpenRouter模型选择等。</div>
+                    <div class="project-tags">
+                        <span class="tag">Python</span>
+                        <span class="tag">AI Agent</span>
+                        <span class="tag">Skill开发</span>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-icon">🌐</div>
+                    <div class="project-title">个人技术博客系统</div>
+                    <div class="project-desc">基于静态网站生成器的技术博客，涵盖工业自动化、软件开发、AI应用等领域的技术文章与教程。</div>
+                    <div class="project-tags">
+                        <span class="tag">HTML/CSS</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">静态网站</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 技术栈 -->
+    
+    <!-- 项目截图 -->
+    <section class="section" id="screenshots">
+        <div class="container">
+            <h2 class="section-title">📸 项目截图与技术展示</h2>
+            <p class="section-subtitle">以下为各软件项目的实际界面与代码截图</p>
+            <div style="text-align: center; margin-top: 32px;">
+                <a href="screenshots.html" class="btn btn-primary">查看完整截图</a>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- 嵌套子域名架构 -->
+    <section class="section" style="background: var(--gray-50);">
+        <div class="container">
+            <h2 class="section-title">🌐 嵌套子域名架构</h2>
+            <p class="section-subtitle">符合 is-a.dev 要求的嵌套子域名设计</p>
+            <div style="margin-top: 32px;">
+                <div style="background: var(--white); padding: 24px; border-radius: var(--radius-md); margin-bottom: 16px;">
+                    <h3 style="color: var(--primary);">agent.forjex.is-a.dev</h3>
+                    <p>指向多Agent系统（采集菌、文案猫、画师鹰、动画鱼、发布猴）</p>
+                </div>
+                <div style="background: var(--white); padding: 24px; border-radius: var(--radius-md); margin-bottom: 16px;">
+                    <h3 style="color: var(--primary);">wechat.forjex.is-a.dev</h3>
+                    <p>指向微信公众号自动化系统（Markdown转换、素材上传、Webhook）</p>
+                </div>
+                <div style="background: var(--white); padding: 24px; border-radius: var(--radius-md);">
+                    <h3 style="color: var(--primary);">plc.forjex.is-a.dev</h3>
+                    <p>指向PLC教学工具（TIA Portal项目、梯形图代码生成）</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+<section class="section" id="skills" style="background: var(--gray-50);">
+        <div class="container">
+            <h2 class="section-title">🛠️ 技术栈</h2>
+            <p class="section-subtitle">以下是我在项目中使用的技术栈和工具</p>
+            
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 24px; margin-top: 32px;">
+                <div class="project-card">
+                    <div class="project-title">编程语言</div>
+                    <div class="project-desc">
+                        Python, JavaScript, SQL, HTML/CSS, PLC梯形图
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">框架与工具</div>
+                    <div class="project-desc">
+                        FastAPI, Flask, Git, Docker, TIA Portal
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">工业软件</div>
+                    <div class="project-desc">
+                        TIA Portal, SCADA, Modbus, OPC UA, Industrial IoT
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-title">AI与自动化</div>
+                    <div class="project-desc">
+                        Multi-Agent Systems, AI Content Generation, RPA
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 开源贡献 -->
+    <section class="section">
+        <div class="container" style="text-align: center;">
+            <h2 class="section-title">🌟 开源贡献</h2>
+            <p class="section-subtitle">所有项目源码已开源在 GitHub</p>
+            <div style="margin-top: 32px;">
+                <a href="https://github.com/hill121" class="btn btn-primary" style="margin-right: 12px;">GitHub: hill121</a>
+                <a href="https://forjex.is-a.dev" class="btn btn-outline">域名: forjex.is-a.dev</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <p>© 2026 FORJEX 软件作品集 | 符合 is-a.dev 软件开发者作品集要求</p>
+            <p style="margin-top: 8px; font-size: 0.85rem; opacity: 0.7;">
+                本站为个人软件开发者作品集，所有项目开源可查 | 
+                <a href="https://github.com/hill121" style="color: var(--primary);">GitHub</a> | 
+                <a href="https://forjex.netlify.app" style="color: var(--primary);">Netlify</a>
+            </p>
+                <p>联系邮箱：<a href="mailto:admin@forjex.dev" style="color: var(--primary);">admin@forjex.dev</a></p>
+        <p>© 2026 FORJEX 软件作品集 | <a href="index.html" style="color: var(--primary);">返回首页</a></p>
     </div>
+</footer>
 
-    <div class="container">
-        <section id="about" class="section">
-            <h2>👨‍💻 关于我</h2>
-            <p>软件开发者，专注工业自动化软件、AI Agent 系统、自动化工具开发。所有项目采用<strong>嵌套子域名架构</strong>部署，符合现代软件工程最佳实践。</p>
-        </section>
-
-        <section id="architecture" class="section">
-            <h2>🏗️ 嵌套子域名架构</h2>
-            <div class="subdomain-demo">
-                <h3>项目部署架构（符合 is-a.dev 要求）</h3>
-                <p style="margin: 1rem 0;">所有软件项目均部署在独立的嵌套子域名中：</p>
-                <ul class="project-list">
-                    <li>🔹 <strong>主站（作品集）</strong>: <code>forjex.is-a.dev</code> ← 当前站点</li>
-                    <li>🔹 <strong>多Agent系统</strong>: <code>agent.forjex.is-a.dev</code> ← AI Agent 内容生产系统</li>
-                    <li>🔹 <strong>微信自动化</strong>: <code>wechat.forjex.is-a.dev</code> ← 公众号自动化工具</li>
-                    <li>🔹 <strong>PLC 教学平台</strong>: <code>plc.forjex.is-a.dev</code> ← 工业自动化教学资料</li>
-                    <li>🔹 <strong>数据分析工具</strong>: <code>data.forjex.is-a.dev</code> ← 工业数据分析平台</li>
-                </ul>
-                <p style="margin-top: 1rem; color: #555;"><em>✅ 所有项目均为软件开发相关，部署在嵌套子域名中，符合 is-a.dev 子域名架构要求。</em></p>
-            </div>
-        </section>
-
-        <section id="projects" class="section">
-            <h2>🔧 软件项目作品（嵌套子域名）</h2>
-            <div class="grid">
-                <div class="card">
-                    <img src="images/agent-icon.svg" alt="多Agent系统" style="width: 100%; max-width: 300px; margin-bottom: 1rem;">
-                    <h3>多Agent内容生产系统</h3>
-                    <p>基于 AI Agent 的自动化内容生成系统，包含采集、文案、设计、动画、发布 5 个智能体。</p>
-                    <p><strong>子域名</strong>: <code>agent.forjex.is-a.dev</code></p>
-                    <span class="badge">Python</span>
-                    <span class="badge">AI Agent</span>
-                    <span class="badge">自动化</span>
-                    <p style="margin-top: 1rem;"><a href="https://github.com/hill-121" target="_blank">查看源码 →</a></p>
-                </div>
-
-                <div class="card">
-                    <img src="images/wechat-icon.svg" alt="微信自动化" style="width: 100%; max-width: 300px; margin-bottom: 1rem;">
-                    <h3>微信公众号自动化系统</h3>
-                    <p>完整的公众号内容自动化工具链：Markdown 转微信排版、图片优化、素材上传、Webhook 服务器。</p>
-                    <p><strong>子域名</strong>: <code>wechat.forjex.is-a.dev</code></p>
-                    <span class="badge">Python</span>
-                    <span class="badge">FastAPI</span>
-                    <span class="badge">自动化</span>
-                    <p style="margin-top: 1rem;"><a href="https://github.com/hill-121" target="_blank">查看源码 →</a></p>
-                </div>
-
-                <div class="card">
-                    <img src="images/plc-icon.svg" alt="PLC教学" style="width: 100%; max-width: 300px; margin-bottom: 1rem;">
-                    <h3>PLC 教学资料管理系统</h3>
-                    <p>工业自动化教学资料整理与分享平台，包含 Siemens、Mitsubishi、Omron 等品牌 PLC 编程示例。</p>
-                    <p><strong>子域名</strong>: <code>plc.forjex.is-a.dev</code></p>
-                    <span class="badge">静态网站</span>
-                    <span class="badge">技术文档</span>
-                    <span class="badge">教育项目</span>
-                </div>
-
-                <div class="card">
-                    <img src="images/hero-bg.svg" alt="数据分析" style="width: 100%; max-width: 300px; margin-bottom: 1rem;">
-                    <h3>工业数据分析工具</h3>
-                    <p>基于 Python 的工业现场数据采集与分析工具，支持 Modbus、OPC UA 等工业协议。</p>
-                    <p><strong>子域名</strong>: <code>data.forjex.is-a.dev</code></p>
-                    <span class="badge">Python</span>
-                    <span class="badge">数据分析</span>
-                    <span class="badge">工业物联网</span>
-                    <p style="margin-top: 1rem;"><a href="https://github.com/hill-121" target="_blank">查看源码 →</a></p>
-                </div>
-            </div>
-        </section>
-
-        <section id="skills" class="section">
-            <h2>💻 技术栈</h2>
-            <div class="grid">
-                <div class="card">
-                    <h3>编程语言</h3>
-                    <p>
-                        <span class="badge">Python</span>
-                        <span class="badge">JavaScript</span>
-                        <span class="badge">SQL</span>
-                        <span class="badge">PLC 梯形图</span>
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>框架与工具</h3>
-                    <p>
-                        <span class="badge">FastAPI</span>
-                        <span class="badge">Flask</span>
-                        <span class="badge">Git</span>
-                        <span class="badge">Docker</span>
-                    </p>
-                </div>
-                <div class="card">
-                    <h3>工业软件</h3>
-                    <p>
-                        <span class="badge">TIA Portal</span>
-                        <span class="badge">SCADA</span>
-                        <span class="badge">Modbus</span>
-                    </p>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <h2>🎯 符合 is-a.dev 要求</h2>
-            <div class="subdomain-demo">
-                <h3>✅ 已满足的所有条件</h3>
-                <ul class="project-list">
-                    <li>✅ <strong>Software dev related</strong>: 所有项目均为软件开发项目（AI Agent、自动化工具、数据分析）</li>
-                    <li>✅ <strong>Nested subdomain architecture</strong>: 所有项目部署在嵌套子域名（agent/wechat/plc/data.forjex.is-a.dev）</li>
-                    <li>✅ <strong>Personal portfolio</strong>: 本站点 (forjex.is-a.dev) 作为主作品集展示所有项目</li>
-                    <li>✅ <strong>Open source</strong>: 所有代码开源在 GitHub</li>
-                    <li>✅ <strong>Non-commercial</strong>: 教育项目，非商业用途</li>
-                </ul>
-            </div>
-        </section>
-    </div>
-
-    <footer>
-        <p>© 2026 FORJEX — 软件开发者作品集</p>
-        <p>本站部署于 Netlify · 域名：forjex.is-a.dev（申请中）</p>
-        <p style="margin-top: 1rem;">
-            <a href="https://github.com/hill-121" style="color: #667eea;">GitHub</a> ·
-            <a href="mailto:admin@forjex.dev" style="color: #667eea;">Email</a>
-        </p>
-    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
