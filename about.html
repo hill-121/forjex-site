@@ -1,0 +1,161 @@
+     1|<!DOCTYPE html>
+     2|<html lang="zh-CN">
+     3|<head>
+     4|    <meta charset="UTF-8">
+     5|    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     6|    <title>关于我 - FORJEX 程序设计实验室</title>
+     7|    <link rel="stylesheet" href="style.css">
+     8|    <style>
+     9|        .about-section { padding: 80px 0; }
+    10|        .dev-profile {
+    11|            display: grid;
+    12|            grid-template-columns: 200px 1fr;
+    13|            gap: 40px;
+    14|            align-items: center;
+    15|            margin-bottom: 60px;
+    16|        }
+    17|        .dev-avatar {
+    18|            width: 200px;
+    19|            height: 200px;
+    20|            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    21|            border-radius: 50%;
+    22|            display: flex;
+    23|            align-items: center;
+    24|            justify-content: center;
+    25|            font-size: 4rem;
+    26|        }
+    27|        .dev-info h2 { font-size: 2rem; margin-bottom: 8px; }
+    28|        .dev-info .title { color: var(--primary); margin-bottom: 16px; }
+    29|        .dev-bio {
+    30|            color: var(--gray-600);
+    31|            line-height: 1.8;
+    32|            margin-bottom: 20px;
+    33|        }
+    34|        .dev-stats {
+    35|            display: grid;
+    36|            grid-template-columns: repeat(3, 1fr);
+    37|            gap: 20px;
+    38|            margin: 40px 0;
+    39|        }
+    40|        .stat-card {
+    41|            background: var(--white);
+    42|            padding: 24px;
+    43|            border-radius: var(--radius-md);
+    44|            text-align: center;
+    45|            box-shadow: var(--shadow);
+    46|        }
+    47|        .stat-number {
+    48|            font-size: 2rem;
+    49|            font-weight: 900;
+    50|            color: var(--primary);
+    51|            display: block;
+    52|        }
+    53|        .stat-label {
+    54|            font-size: 0.85rem;
+    55|            color: var(--gray-600);
+    56|        }
+    57|        .skill-list {
+    58|            display: flex;
+    59|            flex-wrap: wrap;
+    60|            gap: 8px;
+    61|            margin-top: 12px;
+    62|        }
+    63|        .skill-tag {
+    64|            background: var(--primary-light);
+    65|            color: var(--primary);
+    66|            padding: 6px 12px;
+    67|            border-radius: 16px;
+    68|            font-size: 0.85rem;
+    69|        }
+    70|    </style>
+    71|</head>
+    72|<body>
+    73|    <nav class="navbar" id="navbar">
+    74|        <div class="container nav-container">
+    75|            <a href="index.html" class="logo">
+    76|                <span class="logo-icon">💻</span>
+    77|                <span class="logo-text">FORJEX <span style="font-size:.8rem;font-weight:400;opacity:.7">软件作品集</span></span>
+    78|            </a>
+    79|            <ul class="nav-links" id="navLinks">
+    80|                <li><a href="index.html">首页</a></li>
+    81|                <li><a href="index.html#projects">项目展示</a></li>
+    82|                <li><a href="screenshots.html">项目截图</a></li>
+    83|                <li><a href="about.html">关于我</a></li>
+    84|            </ul>
+    85|        </div>
+    86|    </nav>
+    87|
+    88|    <section class="about-section">
+    89|        <div class="container">
+    90|            <h2 class="section-title">👤 关于开发者</h2>
+    91|            <p class="section-subtitle">一名专注于自动化、AI应用与工业软件的开发者</p>
+    92|
+    93|            <div class="dev-profile">
+    94|                <div class="dev-avatar">👨‍💻</div>
+    95|                <div class="dev-info">
+    96|                    <h2>hill-121 (罗鹏)</h2>
+    97|                    <div class="title">职教培训讲师 · 软件开发者</div>
+    98|                    <div class="dev-bio">
+    99|                        拥有多年软件开发与职业教育培训经验，专注于将AI技术应用于工业场景。
+   100|                        擅长Python开发、多Agent系统设计、微信公众号自动化系统搭建。
+   101|                        目前致力于为职教培训、教学设备、仪器仪表销售提供软件解决方案。
+   102|                    </div>
+   103|                    <div class="skill-list">
+   104|                        <span class="skill-tag">Python</span>
+   105|                        <span class="skill-tag">AI Agent</span>
+   106|                        <span class="skill-tag">FastAPI</span>
+   107|                        <span class="skill-tag">TIA Portal</span>
+   108|                        <span class="skill-tag">编程编程</span>
+   109|                        <span class="skill-tag">微信生态开发</span>
+   110|                    </div>
+   111|                </div>
+   112|            </div>
+   113|
+   114|            <div class="dev-stats">
+   115|                <div class="stat-card">
+   116|                    <span class="stat-number">6+</span>
+   117|                    <span class="stat-label">软件项目</span>
+   118|                </div>
+   119|                <div class="stat-card">
+   120|                    <span class="stat-number">5+</span>
+   121|                    <span class="stat-label">年开发经验</span>
+   122|                </div>
+   123|                <div class="stat-card">
+   124|                    <span class="stat-number">3+</span>
+   125|                    <span class="stat-label">培训服务方向</span>
+   126|                </div>
+   127|            </div>
+   128|
+   129|            <div style="margin-top: 60px;">
+   130|                <h3>🎓 职业经历</h3>
+   131|                <div style="margin-top: 20px; line-height: 1.8;">
+   132|                    <p><strong>2020年至今</strong>：天津中工智能机器人有限公司 - 职教培训讲师</p>
+   133|                    <p style="margin-top: 12px;">主要服务：院校教师、培训机构、社会人员三类对象，提供定制化教具课程，帮助学员快速上手软件开发技术。</p>
+   134|                </div>
+   135|
+   136|                <h3 style="margin-top: 40px;">🛠️ 技术能力</h3>
+   137|                <div style="margin-top: 20px;">
+   138|                    <p><strong>编程语言：</strong>Python, JavaScript, SQL, 编程梯形图</p>
+   139|                    <p style="margin-top: 8px;"><strong>框架工具：</strong>FastAPI, Flask, Git, Docker</p>
+   140|                    <p style="margin-top: 8px;"><strong>工业软件：</strong>TIA Portal, SCADA, Modbus, OPC UA</p>
+   141|                    <p style="margin-top: 8px;"><strong>AI应用：</strong>Multi-Agent Systems, RPA, 内容自动化</p>
+   142|                </div>
+   143|
+   144|                <h3 style="margin-top: 40px;">📬 联系方式</h3>
+   145|                <div style="margin-top: 20px;">
+   146|                    <p><strong>GitHub：</strong><a href="https://github.com/hill121" style="color: var(--primary);">github.com/hill121</a></p>
+   147|                    <p style="margin-top: 8px;"><strong>邮箱：</strong>admin@forjex.dev</p>
+   148|                    <p style="margin-top: 8px;"><strong>作品集：</strong><a href="https://forjex.netlify.app" style="color: var(--primary);">forjex.netlify.app</a></p>
+   149|                </div>
+   150|            </div>
+   151|        </div>
+   152|    </section>
+   153|
+   154|    <footer class="footer">
+   155|        <div class="container">
+   156|            <p>© 2026 FORJEX 程序设计实验室 | <a href="index.html" style="color: var(--primary);">返回首页</a></p>
+   157|        </div>
+   158|    </footer>
+   159|</body>
+   160|</html>
+   161|
