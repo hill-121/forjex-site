@@ -1,0 +1,4 @@
+title: FORJEX
+exclude:
+  - node_modules
+  - .netlify
