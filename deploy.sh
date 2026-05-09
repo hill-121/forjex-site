@@ -1,5 +1,5 @@
 #!/bin/bash
-# FORJEX 网站部署和 PR 更新脚本
+# DevLab 网站部署和 PR 更新脚本
 # 使用方法：
 # 1. 创建 GitHub Personal Access Token (PAT):
 #    - 访问: https://github.com/settings/tokens
@@ -12,7 +12,7 @@ set -e
 
 # 配置
 GITHUB_USER="hill121"
-REPO_NAME="forjex-site"
+REPO_NAME="devlab-site"
 TOKEN="${GITHUB_TOKEN}"
 
 if [ -z "$TOKEN" ]; then
@@ -26,12 +26,12 @@ curl -s -X POST \
   -H "Authorization: token $TOKEN" \
   -H "Accept: application/vnd.github.v3+json" \
   https://api.github.com/user/repos \
-  -d "{\"name\":\"$REPO_NAME\",\"description\":\"工业软件开发者作品集 - FORJEX\",\"homepage\":\"https://forjex.netlify.app\",\"public\":true}" \
+  -d "{\"name\":\"$REPO_NAME\",\"description\":\"工业软件开发者作品集 - DevLab\",\"homepage\":\"https://devlab.netlify.app\",\"public\":true}" \
   | grep -q '"full_name"' && echo "✓ 仓库创建成功" || echo "仓库可能已存在，继续..."
 
 echo ""
 echo "=== 步骤 2: 推送代码到 GitHub ==="
-cd /mnt/f/Hermes/forjex-site
+cd /mnt/f/Hermes/devlab-site
 git remote remove origin 2>/dev/null || true
 git remote add origin https://$GITHUB_USER:$TOKEN@github.com/$GITHUB_USER/$REPO_NAME.git
 git branch -M main
@@ -47,12 +47,12 @@ echo "1. 访问 https://app.netlify.com/start"
 echo "2. 选择 'Import from Git'"
 echo "3. 授权 GitHub，选择 $REPO_NAME 仓库"
 echo "4. 部署设置: Publish directory = '.'"
-echo "5. 部署完成后，站点会自动更新到 forjex.netlify.app"
+echo "5. 部署完成后，站点会自动更新到 devlab.netlify.app"
 
 echo ""
 echo "=== 步骤 4: 更新 is-a.dev PR ==="
 echo "请访问: https://github.com/is-a-dev/register/pulls?q=is%3Apr+author%3A$GITHUB_USER"
-echo "找到你的 forjex PR，添加以下评论:"
+echo "找到你的 devlab PR，添加以下评论:"
 echo ""
 cat << 'EOF'
 ## 网站已更新为软件开发者作品集
