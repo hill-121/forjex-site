@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wechat.forjex.is-a.dev — 微信公众号自动化</title>
+    <meta name="description" content="微信公众号自动化系统，包含Markdown转HTML、图片优化、素材上传、Webhook服务器。">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #e2e8f0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; padding: 40px 0; }
+        .header h1 { font-size: 2.5rem; color: #10b981; margin-bottom: 10px; }
+        .header p { color: #94a3b8; }
+        .code-screenshot { background: #1e293b; border-radius: 8px; padding: 20px; margin: 20px 0; border: 1px solid #334155; }
+        .code-header { background: #0f172a; padding: 10px; border-radius: 4px; margin-bottom: 15px; color: #10b981; font-weight: bold; }
+        pre { color: #e2e8f0; font-family: "Courier New", monospace; line-height: 1.8; overflow-x: auto; }
+        .keyword { color: #10b981; }
+        .string { color: #6ee7b7; }
+        .comment { color: #64748b; }
+        .module-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 30px; }
+        .module-card { background: #1e293b; padding: 20px; border-radius: 8px; border: 1px solid #334155; }
+        .module-card h3 { color: #10b981; margin-bottom: 10px; }
+        .back-link { text-align: center; margin-top: 40px; }
+        .back-link a { color: #10b981; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>💬 微信公众号自动化系统</h1>
+            <p>wechat.forjex.is-a.dev — Markdown转HTML、素材管理、Webhook服务器、定时任务</p>
+        </div>
+
+        <div class="code-screenshot">
+            <div class="code-header">wechat_automation.py</div>
+            <pre><span class="keyword">from</span> <span class="string">fastapi</span> <span class="keyword">import</span> FastAPI
+<span class="keyword">from</span> <span class="string">markdown</span> <span class="keyword">import</span> markdown
+
+app = FastAPI()
+
+<span class="comment"># Markdown → 微信HTML转换器</span>
+<span class="keyword">def</span> md_to_wechat_html(md_text):
+    html = markdown.markdown(md_text)
+    <span class="keyword">return</span> f<span class="string">"""
+    &lt;div class="wechat-article"&gt;
+        {html}
+        &lt;script src="wechat-stats.js"&gt;&lt;/script&gt;
+    &lt;/div&gt;
+    """</span>
+
+<span class="comment"># Webhook服务器</span>
+@app.post(<span class="string">"/webhook"</span>)
+<span class="keyword">async def</span> handle_webhook(data: dict):
+    <span class="keyword">print</span>(f<span class="string">"收到消息: {data}"</span>)
+    <span class="keyword">return</span> {<span class="string">"status"</span>: <span class="string">"ok"</span>}</pre>
+        </div>
+
+        <h2 style="color: #10b981; margin-top: 40px;">功能模块</h2>
+        <div class="module-grid">
+            <div class="module-card">
+                <h3>📝 md2wechat.py</h3>
+                <p>Markdown转微信HTML，支持代码高亮、表格、图片优化</p>
+            </div>
+            <div class="module-card">
+                <h3>🖼️ optimize_image.py</h3>
+                <p>图片压缩、格式转换、微信封面图生成</p>
+            </div>
+            <div class="module-card">
+                <h3>☁️ upload_media.py</h3>
+                <p>素材上传到微信服务器，自动获取media_id</p>
+            </div>
+            <div class="module-card">
+                <h3>🔗 webhook_server.py</h3>
+                <p>FastAPI Webhook服务器，处理微信消息回调</p>
+            </div>
+        </div>
+
+        <div class="back-link">
+            <a href="https://forjex.is-a.dev">← 返回作品集首页</a>
+        </div>
+    </div>
+</body>
+</html>

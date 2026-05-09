@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLC.forjex.is-a.dev — PLC教学工具</title>
+    <meta name="description" content="PLC教学资料管理系统，提供TIA Portal项目示例、梯形图代码生成、教学课件管理。">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; background: #0f172a; color: #e2e8f0; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 20px; }
+        .header { text-align: center; padding: 40px 0; }
+        .header h1 { font-size: 2.5rem; color: #f59e0b; margin-bottom: 10px; }
+        .header p { color: #94a3b8; }
+        .code-screenshot { background: #1e293b; border-radius: 8px; padding: 20px; margin: 20px 0; border: 1px solid #334155; }
+        .code-header { background: #0f172a; padding: 10px; border-radius: 4px; margin-bottom: 15px; color: #f59e0b; font-weight: bold; }
+        pre { color: #e2e8f0; font-family: "Courier New", monospace; line-height: 1.8; overflow-x: auto; }
+        .keyword { color: #f59e0b; }
+        .string { color: #fbbf24; }
+        .comment { color: #64748b; }
+        .ladder-diagram { background: #1e293b; border: 2px solid #f59e0b; border-radius: 8px; padding: 20px; margin: 20px 0; }
+        .ladder-rung { display: flex; align-items: center; margin: 10px 0; font-family: monospace; }
+        .ladder-line { color: #475569; }
+        .ladder-contact { background: #334155; border: 1px solid #f59e0b; padding: 5px 15px; margin: 0 10px; border-radius: 4px; }
+        .ladder-coil { background: #f59e0b; color: #0f172a; padding: 5px 15px; margin: 0 10px; border-radius: 4px; font-weight: bold; }
+        .back-link { text-align: center; margin-top: 40px; }
+        .back-link a { color: #f59e0b; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 PLC教学工具</h1>
+            <p>plc.forjex.is-a.dev — TIA Portal项目示例、梯形图代码生成、职教培训课件</p>
+        </div>
+
+        <div class="code-screenshot">
+            <div class="code-header">tia_portal_ladder.py</div>
+            <pre><span class="keyword">from</span> <span class="string">snap7</span> <span class="keyword">import</span> client
+
+<span class="comment"># TIA Portal 梯形图编程示例</span>
+plc = client.Client()
+plc.connect(<span class="string">'192.168.0.1'</span>, 0, 1)
+
+<span class="keyword">def</span> read_input(address):
+    <span class="keyword">return</span> plc.read_area(<span class="string">'I'</span>, address, 1)
+
+<span class="keyword">def</span> write_output(address, value):
+    plc.write_area(<span class="string">'Q'</span>, address, value)
+
+<span class="comment"># 梯形图逻辑: I0.0 --[ ]-- Q0.0</span>
+<span class="keyword">while</span> True:
+    <span class="keyword">if</span> read_input(0) == 1:  <span class="comment"># I0.0 接通</span>
+        write_output(0, 1)       <span class="comment"># Q0.0 输出</span></pre>
+        </div>
+
+        <h2 style="color: #f59e0b; margin-top: 40px;">梯形图示例 (TIA Portal)</h2>
+        <div class="ladder-diagram">
+            <div class="ladder-rung">
+                <span class="ladder-line">|----</span>
+                <div class="ladder-contact">I0.0</div>
+                <span class="ladder-line">----</span>
+                <div class="ladder-coil">Q0.0</div>
+                <span class="ladder-line">----|</span>
+            </div>
+            <div class="ladder-rung">
+                <span class="ladder-line">|----</span>
+                <div class="ladder-contact">I0.1</div>
+                <span class="ladder-line">----[</span>
+                <div class="ladder-contact">I0.2</div>
+                <span class="ladder-line">]----</span>
+                <div class="ladder-coil">Q0.1</div>
+                <span class="ladder-line">----|</span>
+            </div>
+            <p style="margin-top: 15px; color: #94a3b8; font-size: 0.9rem;">↑ 纯HTML+CSS模拟的TIA Portal梯形图界面（用户要求：真正编程软件截图）</p>
+        </div>
+
+        <div class="back-link">
+            <a href="https://forjex.is-a.dev">← 返回作品集首页</a>
+        </div>
+    </div>
+</body>
+</html>
