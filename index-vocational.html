@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORJEX 卓铸 — 设备专家.职教培训</title>
+    <meta name="description" content="FORJEX卓铸，专注职教培训设备、教学仪器、工业机器人实训系统、PLC实训台、仪器仪表，服务多家院校，丰富产品型号，20年+行业经验。">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2563eb;
+            --primary-light: #dbeafe;
+            --gray-900: #111827;
+            --gray-600: #4b5563;
+            --gray-300: #d1d5db;
+            --white: #ffffff;
+            --shadow: 0 1px 3px rgba(0,0,0,0.1);
+            --shadow-lg: 0 10px 15px rgba(0,0,0,0.1);
+            --radius-md: 8px;
+            --transition: all 0.3s ease;
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Noto Sans SC', -apple-system, sans-serif;
+            line-height: 1.6;
+            color: var(--gray-900);
+            background: var(--white);
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header {
+            background: var(--white);
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 900;
+            color: var(--primary);
+        }
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+        .nav-links a {
+            text-decoration: none;
+            color: var(--gray-600);
+            font-weight: 500;
+            transition: var(--transition);
+        }
+        .nav-links a:hover { color: var(--primary); }
+        
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, #1e40af 100%);
+            color: var(--white);
+            padding: 80px 0;
+            text-align: center;
+        }
+        .hero h1 {
+            font-size: 3rem;
+            font-weight: 900;
+            margin-bottom: 16px;
+        }
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 32px;
+            opacity: 0.9;
+        }
+        .btn {
+            display: inline-block;
+            padding: 12px 32px;
+            background: var(--white);
+            color: var(--primary);
+            text-decoration: none;
+            border-radius: var(--radius-md);
+            font-weight: 700;
+            transition: var(--transition);
+        }
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+        
+        /* Core Business */
+        .business {
+            padding: 80px 0;
+            background: #f9fafb;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 48px;
+        }
+        .business-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 32px;
+        }
+        .business-card {
+            background: var(--white);
+            border-radius: var(--radius-md);
+            padding: 32px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        .business-card:hover {
+            transform: translateY(-4px);
+            box-shadow: var(--shadow-lg);
+        }
+        .business-icon {
+            font-size: 2.5rem;
+            margin-bottom: 16px;
+        }
+        .business-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .business-card p {
+            color: var(--gray-600);
+            margin-bottom: 16px;
+        }
+        .business-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        .business-card li {
+            padding: 8px 0;
+            border-bottom: 1px solid var(--gray-300);
+            color: var(--gray-600);
+        }
+        
+        /* Products */
+        .products {
+            padding: 80px 0;
+        }
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+        }
+        .product-card {
+            border: 1px solid var(--gray-300);
+            border-radius: var(--radius-md);
+            padding: 24px;
+            text-align: center;
+            transition: var(--transition);
+        }
+        .product-card:hover {
+            border-color: var(--primary);
+            box-shadow: var(--shadow);
+        }
+        .product-card h4 {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin: 12px 0;
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--gray-900);
+            color: var(--white);
+            padding: 48px 0;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+            <div class="logo">FORJEX 卓铸</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="products.html">产品中心</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <h1 style="display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap;">
+            设备专家
+            <span style="display:inline-block; width:8px; height:8px; background:rgba(255,255,255,0.9); border-radius:50%; flex-shrink:0;"></span>
+            职教培训
+        </h1>
+            <p>教学仪器 · PLC实训台 · 工业机器人 · 仪器仪表 · 非标自动化</p>
+            <a href="#contact" class="btn">获取方案报价</a>
+        </div>
+    </section>
+
+    <!-- Core Business -->
+    <section class="business" id="business">
+        <div class="container">
+            <h2 class="section-title">核心业务板块</h2>
+            <div class="business-grid">
+                <!-- 1. 教学仪器 -->
+                <div class="business-card">
+                    <div class="business-icon">🔧</div>
+                    <h3>教具与教学仪器</h3>
+                    <p>提供完整的职教实训设备解决方案</p>
+                    <ul>
+                        <li>PLC实训台（西门子、三菱、欧姆龙）</li>
+                        <li>工业机器人实训系统</li>
+                        <li>液压与气动实训装置</li>
+                        <li>电工电子实验台</li>
+                        <li>智能制造生产线模型</li>
+                    </ul>
+                </div>
+                
+                <!-- 2. 职教培训 -->
+                <div class="business-card">
+                    <div class="business-icon">🎓</div>
+                    <h3>职教培训服务</h3>
+                    <p>面向多层次的职业培训体系</p>
+                    <ul>
+                        <li>高职院校实训基地建设</li>
+                        <li>中职学校设备配套</li>
+                        <li>技师学院定制化方案</li>
+                        <li>企业内训与技术提升</li>
+                        <li>1+X证书实训设备</li>
+                    </ul>
+                </div>
+                
+                <!-- 3. 仪器仪表 -->
+                <div class="business-card">
+                    <div class="business-icon">📊</div>
+                    <h3>仪器仪表销售</h3>
+                    <p>工业自动化仪表及出口贸易</p>
+                    <ul>
+                        <li>流量计（电磁、涡街、涡轮）</li>
+                        <li>压力/温度变送器</li>
+                        <li>液位计与控制器</li>
+                        <li>分析仪器与传感器</li>
+                        <li>海外出口贸易服务</li>
+                    </ul>
+    
+                                <!-- 4. 非标自动化设备 -->
+                <div class="business-card">
+                    <div class="business-icon">⚙️</div>
+                    <h3>非标自动化设备</h3>
+                    <p>定制化自动化解决方案，满足特定生产需求</p>
+                    <ul>
+                        <li>定制化自动化产线设计与集成</li>
+                        <li>专机设备研发与制造（组装机、检测机、包装机）</li>
+                        <li>工装夹具设计制造（定位夹具、检测夹具、焊接夹具）</li>
+                        <li>自动化检测与控制系统（视觉检测、数据采集、PLC控制）</li>
+                        <li>产线升级改造服务（旧线自动化改造、效率提升）</li>
+                        <li>非标设备维护与技术服务</li>
+                    </ul>
+                </div>
+
+
+                                <!-- 4. 非标自动化设备 -->
+                <div class="business-card">
+                    <div class="business-icon">⚙️</div>
+                    <h3>非标自动化设备</h3>
+                    <p>定制化自动化解决方案，满足特定生产需求</p>
+                    <ul>
+                        <li>定制化自动化产线设计与集成</li>
+                        <li>专机设备研发与制造（组装机、检测机、包装机）</li>
+                        <li>工装夹具设计制造（定位夹具、检测夹具、焊接夹具）</li>
+                        <li>自动化检测与控制系统（视觉检测、数据采集、PLC控制）</li>
+                        <li>产线升级改造服务（旧线自动化改造、效率提升）</li>
+                        <li>非标设备维护与技术服务</li>
+                    </ul>
+                </div>
+
+        </div>
+    </section>
+
+    <!-- Products -->
+    <section class="products" id="products">
+        <div class="container">
+            <h2 class="section-title">产品中心</h2>
+            <div class="product-grid">
+                <div class="product-card">
+                    <div class="business-icon">⚙️</div>
+                    <h4>PLC实训台系列</h4>
+                    <p>西门子S7-1200/1500、三菱FX系列、欧姆龙CP系列</p>
+                </div>
+                <div class="product-card">
+                    <div class="business-icon">🤖</div>
+                    <h4>工业机器人工作站</h4>
+                    <p>ABB、FANUC、KUKA机器人实训系统</p>
+                </div>
+                <div class="product-card">
+                    <div class="business-icon">🔩</div>
+                    <h4>液压气动实训台</h4>
+                    <p>工业液压系统、气动控制实验装置</p>
+                </div>
+                <div class="product-card">
+                    <div class="business-icon">📡</div>
+                    <h4>智能制造生产线</h4>
+                    <p>工业机器人+PLC+RFID智能产线模型</p>
+                </div>
+                <div class="product-card">
+                    <div class="business-icon">⚡</div>
+                    <h4>电工电子实验台</h4>
+                    <p>电路原理、电机控制、电气安装实训</p>
+                </div>
+                <div class="product-card">
+                    <div class="business-icon">📈</div>
+                    <h4>过程控制仪表</h4>
+                    <p>流量计、变送器、调节阀、传感器</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 联系我们 -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h3 style="margin-bottom: 16px;">联系我们</h3>
+            <p>联系人：罗老师<br>电话：17725356520<br>| 邮箱：sales@forjex.is-a.dev微信二维码：<br><img src="images/qrcode/wechat_luoshi17725356520.png" alt="微信二维码" style="width:120px; height:120px; margin:8px 0; border:1px solid #e5e7eb; border-radius:8px;"></p>
+            <p style="margin-top: 24px; opacity: 0.7;">© 2026 FORJEX 职教培训设备供应商</p>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,843 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FORJEX 卓铸 — 设备专家.职教培训</title>
+    <meta name="description" content="FORJEX卓铸，专注职教培训设备、教学仪器、工业机器人实训系统、PLC实训台、仪器仪表，服务多家院校，丰富产品型号，20年+行业经验。">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin:0; padding:0; box-sizing:border-box; }
+        body { font-family:'Noto Sans SC',sans-serif; line-height:1.6; color:#111827; }
+        .container { max-width:1400px; margin:0 auto; padding:0 20px; }
+        header { background:#fff; box-shadow:0 1px 3px rgba(0,0,0,0.1); position:sticky; top:0; z-index:100; }
+        nav { display:flex; justify-content:space-between; align-items:center; padding:16px 0; }
+        .logo { font-size:1.5rem; font-weight:900; color:#2563eb; }
+        .nav-links { display:flex; gap:32px; list-style:none; }
+        .nav-links a { text-decoration:none; color:#4b5563; font-weight:500; transition:all 0.3s; }
+        .nav-links a:hover { color:#2563eb; }
+        
+        .page-hero { background:linear-gradient(135deg, #1e40af 0%, #2563eb 100%); color:#fff; padding:80px 0; text-align:center; }
+        .page-hero h1 { font-size:3rem; font-weight:900; margin-bottom:16px; }
+        .page-hero p { font-size:1.25rem; opacity:0.9; }
+        
+        .products-section { padding:80px 0; }
+        .section-title { text-align:center; font-size:2.5rem; font-weight:900; margin-bottom:16px; color:#111827; }
+        .section-subtitle { text-align:center; color:#6b7280; margin-bottom:48px; font-size:1.1rem; }
+        
+        .category-block { margin-bottom:80px; }
+        .category-header {
+            background: linear-gradient(135deg, #2563eb 0%, #3b82f6 100%);
+            color:#fff; padding:24px 32px; border-radius:12px; margin-bottom:32px;
+            display:flex; justify-content:space-between; align-items:center;
+        }
+        .category-header h2 { font-size:1.8rem; font-weight:900; }
+        .category-count { background:rgba(255,255,255,0.2); padding:8px 16px; border-radius:20px; font-weight:700; }
+        
+        .product-grid { display:grid; grid-template-columns:repeat(auto-fill, minmax(320px, 1fr)); gap:24px; }
+        .product-card {
+            background:#fff; border-radius:12px; overflow:hidden;
+            box-shadow:0 1px 3px rgba(0,0,0,0.1); transition:all 0.3s;
+            border:1px solid #e5e7eb;
+        }
+        .product-card:hover { transform:translateY(-4px); box-shadow:0 10px 15px rgba(0,0,0,0.1); border-color:#2563eb; }
+        .product-img {
+            width:100%; height:200px; background:#f3f4f6; display:flex; align-items:center; justify-content:center;
+            font-size:3rem; border-bottom:1px solid #e5e7eb;
+        }
+        .product-info { padding:24px; }
+        .product-model { font-size:0.85rem; color:#6b7280; font-weight:500; margin-bottom:4px; }
+        .product-name { font-size:1.2rem; font-weight:700; color:#111827; margin-bottom:12px; line-height:1.4; }
+        .product-specs { background:#f9fafb; padding:16px; border-radius:8px; margin-bottom:16px; }
+        .spec-item { display:flex; justify-content:space-between; padding:6px 0; border-bottom:1px solid #e5e7eb; font-size:0.9rem; }
+        .spec-item:last-child { border-bottom:none; }
+        .spec-label { color:#6b7280; }
+        .spec-value { color:#111827; font-weight:600; }
+        .product-btn {
+            display:block; width:100%; padding:12px; background:#2563eb; color:#fff;
+            text-align:center; text-decoration:none; border-radius:8px; font-weight:600;
+            transition:all 0.3s; border:none; cursor:pointer;
+        }
+        .product-btn:hover { background:#1d4ed8; }
+        
+        footer { background:#111827; color:#fff; padding:48px 0; text-align:center; }
+        .footer-links { display:flex; justify-content:center; gap:32px; margin-bottom:24px; }
+        .footer-links a { color:#9ca3af; text-decoration:none; }
+        .footer-links a:hover { color:#fff; }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="container">
+            <div class="logo">FORJEX</div>
+            <ul class="nav-links">
+                <li><a href="index.html">首页</a></li>
+                <li><a href="products-full.html">产品中心</a></li>
+                <li><a href="about.html">关于我们</a></li>
+                <li><a href="#contact">联系我们</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="page-hero">
+        <div class="container">
+            <h1>完整产品中心</h1>
+            <p>100+ 产品型号 · 5大类别 · 一站式职教实训解决方案</p>
+        </div>
+    </section>
+
+    <div class="products-section">
+        <div class="container">
+            
+            <!-- 机器人设备 -->
+            <div class="category-block">
+                <div class="category-header">
+                    <h2>🤖 工业机器人设备 (12款)</h2>
+                    <span class="category-count">12 型号</span>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">🤖</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNH-IRW03</div>
+                            <div class="product-name">工业机器人装调应用与维护实训平台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">负载</span><span class="spec-value">6-20kg</span></div>
+                                <div class="spec-item"><span class="spec-label">轴数</span><span class="spec-value">6轴</span></div>
+                                <div class="spec-item"><span class="spec-label">重复精度</span><span class="spec-value">±0.05mm</span></div>
+                                <div class="spec-item"><span class="spec-label">控制系统</span><span class="spec-value">PLC+机器人控制器</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">⚙️</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNH-IR04</div>
+                            <div class="product-name">工业机器人综合应用实训平台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">工作站</span><span class="spec-value">5站可选</span></div>
+                                <div class="spec-item"><span class="spec-label">通信</span><span class="spec-value">PROFINET</span></div>
+                                <div class="spec-item"><span class="spec-label">视觉</span><span class="spec-value">智能相机集成</span></div>
+                                <div class="spec-item"><span class="spec-label">实训项目</span><span class="spec-value">搬运/焊接/装配</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🏭</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNH-DQ01</div>
+                            <div class="product-name">工业机器人自动化综合实训平台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">产线</span><span class="spec-value">8工位</span></div>
+                                <div class="spec-item"><span class="spec-label">PLC</span><span class="spec-value">S7-1200</span></div>
+                                <div class="spec-item"><span class="spec-label">RFID</span><span class="spec-value">读写系统</span></div>
+                                <div class="spec-item"><span class="spec-label">MES</span><span class="spec-value">系统集成</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🔩</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNH-HJ06</div>
+                            <div class="product-name">工业机器人焊接工作站</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">焊接方式</span><span class="spec-value">弧焊/点焊</span></div>
+                                <div class="spec-item"><span class="spec-label">变位机</span><span class="spec-value">3轴</span></div>
+                                <div class="spec-item"><span class="spec-label">焊机</span><span class="spec-value">数字脉冲</span></div>
+                                <div class="spec-item"><span class="spec-label">安全</span><span class="spec-value">光栅保护</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🎨</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNH-PT06</div>
+                            <div class="product-name">工业机器人喷涂工作站</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">喷涂类型</span><span class="spec-value">静电/空气</span></div>
+                                <div class="spec-item"><span class="spec-label">供漆系统</span><span class="spec-value">闭环控制</span></div>
+                                <div class="spec-item"><span class="spec-label">防爆</span><span class="spec-value">Ex d IIC</span></div>
+                                <div class="spec-item"><span class="spec-label">回收</span><span class="spec-value">旋风+滤芯</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🧩</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNT-MK01</div>
+                            <div class="product-name">工业机器人模块化教学工作站</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">模块数</span><span class="spec-value">8个</span></div>
+                                <div class="spec-item"><span class="spec-label">夹具</span><span class="spec-value">快换接口</span></div>
+                                <div class="spec-item"><span class="spec-label">编程</span><span class="spec-value">示教器+PC</span></div>
+                                <div class="spec-item"><span class="spec-label">扩展</span><span class="spec-value">视觉/力控</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">📡</div>
+                        <div class="product-info">
+                            <div class="product-model">ZN-GJQS1</div>
+                            <div class="product-name">工业机器人与智能视觉系统应用实训平台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">相机</span><span class="spec-value">500万像素</span></div>
+                                <div class="spec-item"><span class="spec-label">镜头</span><span class="spec-value">变焦/定焦</span></div>
+                                <div class="spec-item"><span class="spec-label">算法</span><span class="spec-value">模板匹配</span></div>
+                                <div class="spec-item"><span class="spec-label">通信</span><span class="spec-value">TCP/IP</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🚗</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNQ-C16</div>
+                            <div class="product-name">重型线控底盘实训台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">载重</span><span class="spec-value">500kg</span></div>
+                                <div class="spec-item"><span class="spec-label">电机</span><span class="spec-value">伺服×4</span></div>
+                                <div class="spec-item"><span class="spec-label">转向</span><span class="spec-value">线控</span></div>
+                                <div class="spec-item"><span class="spec-label">制动</span><span class="spec-value">ABS+EBD</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🚙</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNQ-C15</div>
+                            <div class="product-name">中型线控底盘实训台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">载重</span><span class="spec-value">300kg</span></div>
+                                <div class="spec-item"><span class="spec-label">转向</span><span class="spec-value">EPS</span></div>
+                                <div class="spec-item"><span class="spec-label">制动</span><span class="spec-value">线控</span></div>
+                                <div class="spec-item"><span class="spec-label">传感器</span><span class="spec-value">超声波×8</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🏎️</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNQ-C12</div>
+                            <div class="product-name">小型线控底盘实训台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">载重</span><span class="spec-value">100kg</span></div>
+                                <div class="spec-item"><span class="spec-label">电机</span><span class="spec-value">直流无刷</span></div>
+                                <div class="spec-item"><span class="spec-label">控制</span><span class="spec-value">CAN总线</span></div>
+                                <div class="spec-item"><span class="spec-label">应用</span><span class="spec-value">教学/竞赛</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🎯</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNQ-C11</div>
+                            <div class="product-name">线控转向教学实训台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">转向比</span><span class="spec-value">可调</span></div>
+                                <div class="spec-item"><span class="spec-label">电机</span><span class="spec-value">转向助力</span></div>
+                                <div class="spec-item"><span class="spec-label">反馈</span><span class="spec-value">力矩/角度</span></div>
+                                <div class="spec-item"><span class="spec-label">实训</span><span class="spec-value">PID控制</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🛑</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNQ-C10</div>
+                            <div class="product-name">线控制动实训台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">制动方式</span><span class="spec-value">盘式/鼓式</span></div>
+                                <div class="spec-item"><span class="spec-label">助力</span><span class="spec-value">真空/电子</span></div>
+                                <div class="spec-item"><span class="spec-label">ABS</span><span class="spec-value">可模拟故障</span></div>
+                                <div class="spec-item"><span class="spec-label">实训</span><span class="spec-value">压力调节</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 电气及自动化实训设备 -->
+            <div class="category-block">
+                <div class="category-header" style="background:linear-gradient(135deg, #059669 0%, #10b981 100%);">
+                    <h2>⚡ 电气及自动化实训设备 (10款)</h2>
+                    <span class="category-count">10 型号</span>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">🔌</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNDG-800D</div>
+                            <div class="product-name">高性能电工电子电拖及自动化技术实训与考核装置</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">电源</span><span class="spec-value">三相380V</span></div>
+                                <div class="spec-item"><span class="spec-label">实训板</span><span class="spec-value">30块</span></div>
+                                <div class="spec-item"><span class="spec-label">考核</span><span class="spec-value">智能考核系统</span></div>
+                                <div class="spec-item"><span class="spec-label">适用</span><span class="spec-value">高职/中职</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🖥️</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNPP-K01J</div>
+                            <div class="product-name">PLC控制技术与组态技术实训装置</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">PLC</span><span class="spec-value">西门子/三菱</span></div>
+                                <div class="spec-item"><span class="spec-label">组态</span><span class="spec-value">MCGS/WinCC</span></div>
+                                <div class="spec-item"><span class="spec-label">I/O</span><span class="spec-value">32入/32出</span></div>
+                                <div class="spec-item"><span class="spec-label">通信</span><span class="spec-value">PROFINET</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🔗</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNJ-01G</div>
+                            <div class="product-name">光机电气一体化控制实训系统</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">模块</span><span class="spec-value">光/机/电/气</span></div>
+                                <div class="spec-item"><span class="spec-label">PLC</span><span class="spec-value">S7-1200</span></div>
+                                <div class="spec-item"><span class="spec-label">传感器</span><span class="spec-value">光电/接近</span></div>
+                                <div class="spec-item"><span class="spec-label">实训</span><span class="spec-value">20个项目</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🏭</div>
+                        <div class="product-info">
+                            <div class="product-model">ZN-MPS03</div>
+                            <div class="product-name">柔性自动化生产线及工业机器人应用实训系统（八站）</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">工位</span><span class="spec-value">8站</span></div>
+                                <div class="spec-item"><span class="spec-label">机器人</span><span class="spec-value">6轴×2</span></div>
+                                <div class="spec-item"><span class="spec-label">RFID</span><span class="spec-value">ISO15693</span></div>
+                                <div class="spec-item"><span class="spec-label">MES</span><span class="spec-value">监控软件</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">📊</div>
+                        <div class="product-info">
+                            <div class="product-model">ZN-1277-I</div>
+                            <div class="product-name">现场总线过程控制实训装置</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">总线</span><span class="spec-value">PROFIBUS/PROFINET</span></div>
+                                <div class="spec-item"><span class="spec-label">仪表</span><span class="spec-value">智能变送器</span></div>
+                                <div class="spec-item"><span class="spec-label">对象</span><span class="spec-value">水箱/加热器</span></div>
+                                <div class="spec-item"><span class="spec-label">控制</span><span class="spec-value">PID/模糊</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">💧</div>
+                        <div class="product-info">
+                            <div class="product-model">ZN-433</div>
+                            <div class="product-name">过程控制实训装置</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">对象</span><span class="spec-value">液位/流量/压力</span></div>
+                                <div class="spec-item"><span class="spec-label">执行器</span><span class="spec-value">调节阀/变频器</span></div>
+                                <div class="spec-item"><span class="spec-label">检测</span><span class="spec-value">4-20mA</span></div>
+                                <div class="spec-item"><span class="spec-label">实训</span><span class="spec-value">串级/比值</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">💨</div>
+                        <div class="product-info">
+                            <div class="product-model">ZN-561B</div>
+                            <div class="product-name">PLC控制的液压与气动综合实训装备</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">液压</span><span class="spec-value">泵站+阀组</span></div>
+                                <div class="spec-item"><span class="spec-label">气动</span><span class="spec-value">气缸+阀岛</span></div>
+                                <div class="spec-item"><span class="spec-label">PLC</span><span class="spec-value">FX3U-48MT</span></div>
+                                <div class="spec-item"><span class="spec-label">回路</span><span class="spec-value">30种</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🔧</div>
+                        <div class="product-info">
+                            <div class="product-model">ZN-800C</div>
+                            <div class="product-name">高性能电工·电子·电力拖动技术实训考核装置</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">电工</span><span class="spec-value">照明/动力</span></div>
+                                <div class="spec-item"><span class="spec-label">电子</span><span class="spec-value">模拟/数字</span></div>
+                                <div class="spec-item"><span class="spec-label">电力拖</span><span class="spec-value">电机控制</span></div>
+                                <div class="spec-item"><span class="spec-label">考核</span><span class="spec-value">故障设置</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">💻</div>
+                        <div class="product-info">
+                            <div class="product-model">ZN-7600S</div>
+                            <div class="product-name">单片机技术应用实训考核装置</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">MCU</span><span class="spec-value">8051/AVR/STM32</span></div>
+                                <div class="spec-item"><span class="spec-label">外设</span><span class="spec-value">LCD/键盘/传感器</span></div>
+                                <div class="spec-item"><span class="spec-label">编程</span><span class="spec-value">Keil/ISP</span></div>
+                                <div class="spec-item"><span class="spec-label">实训</span><span class="spec-value">20个项目</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🏗️</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNPZ-D01</div>
+                            <div class="product-name">自动化控制技术综合应用实训平台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">PLC</span><span class="spec-value">S7-1500</span></div>
+                                <div class="spec-item"><span class="spec-label">HMI</span><span class="spec-value">10寸触摸屏</span></div>
+                                <div class="spec-item"><span class="spec-label">驱动</span><span class="spec-value">伺服/步进</span></div>
+                                <div class="spec-item"><span class="spec-label">网络</span><span class="spec-value">工业以太网</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 机械及自动化实训设备 -->
+            <div class="category-block">
+                <div class="category-header" style="background:linear-gradient(135deg, #7c3aed 0%, #a855f7 100%);">
+                    <h2>🔩 机械及自动化实训设备 (7款)</h2>
+                    <span class="category-count">7 型号</span>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">⚙️</div>
+                        <div class="product-info">
+                            <div class="product-model">ZN-095A</div>
+                            <div class="product-name">0i MF数控设备维护与维修实训考核装置</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">系统</span><span class="spec-value">FANUC 0i-MF</span></div>
+                                <div class="spec-item"><span class="spec-label">轴数</span><span class="spec-value">3/4轴</span></div>
+                                <div class="spec-item"><span class="spec-label">实训</span><span class="spec-value">故障诊断</span></div>
+                                <div class="spec-item"><span class="spec-label">考核</span><span class="spec-value">智能评分</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🔨</div>
+                        <div class="product-info">
+                            <div class="product-model">ZN-08T8A</div>
+                            <div class="product-name">数控车床装调与维修考核实训设备</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">车床</span><span class="spec-value">CK6136</span></div>
+                                <div class="spec-item"><span class="spec-label">系统</span><span class="spec-value">广数/西门子</span></div>
+                                <div class="spec-item"><span class="spec-label">考核</span><span class="spec-value">故障设置</span></div>
+                                <div class="spec-item"><span class="spec-label">工具</span><span class="spec-value">含全套检具</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🏢</div>
+                        <div class="product-info">
+                            <div class="product-model">ZN-XF4</div>
+                            <div class="product-name">楼宇消防自动化系统综合实训装置</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">系统</span><span class="spec-value">火灾报警</span></div>
+                                <div class="spec-item"><span class="spec-label">联动</span><span class="spec-value">喷淋/排烟</span></div>
+                                <div class="spec-item"><span class="spec-label">监控</span><span class="spec-value">图形中心</span></div>
+                                <div class="spec-item"><span class="spec-label">实训</span><span class="spec-value">15个项目</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🏠</div>
+                        <div class="product-info">
+                            <div class="product-model">ZN-3LYDH</div>
+                            <div class="product-name">楼宇智能化工程实训系统</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">系统</span><span class="spec-value">安防/门禁</span></div>
+                                <div class="spec-item"><span class="spec-label">网络</span><span class="spec-value">综合布线</span></div>
+                                <div class="spec-item"><span class="spec-label">视频</span><span class="spec-value">监控摄像</span></div>
+                                <div class="spec-item"><span class="spec-label">实训</span><span class="spec-value">工程设计</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">💡</div>
+                        <div class="product-info">
+                            <div class="product-model">ZN-2BCG</div>
+                            <div class="product-name">楼宇供配电及照明系统综合实训装置</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">配电</span><span class="spec-value">双电源切换</span></div>
+                                <div class="spec-item"><span class="spec-label">照明</span><span class="spec-value">智能调光</span></div>
+                                <div class="spec-item"><span class="spec-label">计量</span><span class="spec-value">多功能表</span></div>
+                                <div class="spec-item"><span class="spec-label">实训</span><span class="spec-value">10个项目</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">📡</div>
+                        <div class="product-info">
+                            <div class="product-model">ZN-CSET-LY-08</div>
+                            <div class="product-name">楼宇工程智能化设备监控系统实训平台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">DDC</span><span class="spec-value">西门子/霍尼韦尔</span></div>
+                                <div class="spec-item"><span class="spec-label">传感器</span><span class="spec-value">温湿度/CO2</span></div>
+                                <div class="spec-item"><span class="spec-label">执行</span><span class="spec-value">阀门/风阀</span></div>
+                                <div class="spec-item"><span class="spec-label">软件</span><span class="spec-value">组态监控</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🔌</div>
+                        <div class="product-info">
+                            <div class="product-model">ZN-123A</div>
+                            <div class="product-name">电气安装与维修实训设备</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">模块</span><span class="spec-value">配电/照明/弱电</span></div>
+                                <div class="spec-item"><span class="spec-label">工具</span><span class="spec-value">含全套工具</span></div>
+                                <div class="spec-item"><span class="spec-label">考核</span><span class="spec-value">技能竞赛</span></div>
+                                <div class="spec-item"><span class="spec-label">标准</span><span class="spec-value">国标/行标</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 新能源汽车实训设备 -->
+            <div class="category-block">
+                <div class="category-header" style="background:linear-gradient(135deg, #dc2626 0%, #ef4444 100%);">
+                    <h2>🚗 新能源汽车实训设备 (8款)</h2>
+                    <span class="category-count">8 型号</span>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">⚡</div>
+                        <div class="product-info">
+                            <div class="product-model">ZN-XNY-13</div>
+                            <div class="product-name">混合动力汽车在线检测实训考核系统</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">车型</span><span class="spec-value">普锐斯/比亚迪</span></div>
+                                <div class="spec-item"><span class="spec-label">系统</span><span class="spec-value">THS/DM-i</span></div>
+                                <div class="spec-item"><span class="spec-label">检测</span><span class="spec-value">OBD在线</span></div>
+                                <div class="spec-item"><span class="spec-label">实训</span><span class="spec-value">故障诊断</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">💧</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNQ-C08</div>
+                            <div class="product-name">氢动力汽车技术实训平台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">燃料电池</span><span class="spec-value">PEMFC 5kW</span></div>
+                                <div class="spec-item"><span class="spec-label">储氢</span><span class="spec-value">35MPa</span></div>
+                                <div class="spec-item"><span class="spec-label">安全</span><span class="spec-value">泄漏检测</span></div>
+                                <div class="spec-item"><span class="spec-label">实训</span><span class="spec-value">系统原理</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">👁️</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNQ-C09</div>
+                            <div class="product-name">视觉传感器实训台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">相机</span><span class="spec-value">500万像素</span></div>
+                                <div class="spec-item"><span class="spec-label">激光</span><span class="spec-value">雷达LIDAR</span></div>
+                                <div class="spec-item"><span class="spec-label">处理</span><span class="spec-value">FPGA</span></div>
+                                <div class="spec-item"><span class="spec-label">通信</span><span class="spec-value">CAN/以太网</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">📡</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNQ-C07</div>
+                            <div class="product-name">激光雷达实训台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">雷达</span><span class="spec-value">16线/32线</span></div>
+                                <div class="spec-item"><span class="spec-label">测距</span><span class="spec-value">100m</span></div>
+                                <div class="spec-item"><span class="spec-label">精度</span><span class="spec-value">±2cm</span></div>
+                                <div class="spec-item"><span class="spec-label">应用</span><span class="spec-value">SLAM建图</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">📻</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNQ-C06</div>
+                            <div class="product-name">毫米波雷达实训台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">频段</span><span class="spec-value">77GHz</span></div>
+                                <div class="spec-item"><span class="spec-label">探测</span><span class="spec-value">200m</span></div>
+                                <div class="spec-item"><span class="spec-label">目标</span><span class="spec-value">64个</span></div>
+                                <div class="spec-item"><span class="spec-label">实训</span><span class="spec-value">ACC/AEB</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🎯</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNQ-C14</div>
+                            <div class="product-name">智能网联汽车技术综合实训车(竞赛版)</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">平台</span><span class="spec-value">线控底盘</span></div>
+                                <div class="spec-item"><span class="spec-label">传感器</span><span class="spec-value">全套ADAS</span></div>
+                                <div class="spec-item"><span class="spec-label">计算</span><span class="spec-value">AI工控机</span></div>
+                                <div class="spec-item"><span class="spec-label">通信</span><span class="spec-value">以太网络</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🚗</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNQ-C15</div>
+                            <div class="product-name">中型线控底盘实训台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">转向</span><span class="spec-value">EPS</span></div>
+                                <div class="spec-item"><span class="spec-label">制动</span><span class="spec-value">线控</span></div>
+                                <div class="spec-item"><span class="spec-label">传感器</span><span class="spec-value">超声波×8</span></div>
+                                <div class="spec-item"><span class="spec-label">应用</span><span class="spec-value">教学/竞赛</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🏎️</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNQ-C16</div>
+                            <div class="product-name">重型线控底盘实训台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">载重</span><span class="spec-value">500kg</span></div>
+                                <div class="spec-item"><span class="spec-label">电机</span><span class="spec-value">伺服×4</span></div>
+                                <div class="spec-item"><span class="spec-label">转向</span><span class="spec-value">线控</span></div>
+                                <div class="spec-item"><span class="spec-label">制动</span><span class="spec-value">ABS+EBD</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- 人工智能与网络实训 -->
+            <div class="category-block">
+                <div class="category-header" style="background:linear-gradient(135deg, #ea580c 0%, #f97316 100%);">
+                    <h2>🤖 人工智能与网络实训 (9款)</h2>
+                    <span class="category-count">9 型号</span>
+                </div>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-img">🧠</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNW-BX08</div>
+                            <div class="product-name">人工智能应用技术实训室</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">GPU</span><span class="spec-value">RTX 4090</span></div>
+                                <div class="spec-item"><span class="spec-label">框架</span><span class="spec-value">TensorFlow/PyTorch</span></div>
+                                <div class="spec-item"><span class="spec-label">实训</span><span class="spec-value">CV/NLP</span></div>
+                                <div class="spec-item"><span class="spec-label">平台</span><span class="spec-value">AI Studio</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🛡️</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNW-BX07</div>
+                            <div class="product-name">网络安全运维与攻防演练综合实训室</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">平台</span><span class="spec-value">Kali/Metasploit</span></div>
+                                <div class="spec-item"><span class="spec-label">靶场</span><span class="spec-value">CTF竞赛</span></div>
+                                <div class="spec-item"><span class="spec-label">防御</span><span class="spec-value">IDS/防火墙</span></div>
+                                <div class="spec-item"><span class="spec-label">实训</span><span class="spec-value">渗透测试</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🔒</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNW-BX06</div>
+                            <div class="product-name">网络安全攻防演练实训室</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">攻击</span><span class="spec-value">红队演练</span></div>
+                                <div class="spec-item"><span class="spec-label">防守</span><span class="spec-value">蓝队监测</span></div>
+                                <div class="spec-item"><span class="spec-label">平台</span><span class="spec-value">攻防对抗</span></div>
+                                <div class="spec-item"><span class="spec-label">日志</span><span class="spec-value">SIEM分析</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">💻</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNW-BX05</div>
+                            <div class="product-name">网络信息安全运维实训室</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">设备</span><span class="spec-value">路由器/交换机</span></div>
+                                <div class="spec-item"><span class="spec-label">协议</span><span class="spec-value">OSPF/BGP</span></div>
+                                <div class="spec-item"><span class="spec-label">安全</span><span class="spec-value">VPN/防火墙</span></div>
+                                <div class="spec-item"><span class="spec-label">认证</span><span class="spec-value">Cisco/华为</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🖥️</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNW-BX04</div>
+                            <div class="product-name">数据中心网络工程综合实训室</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">架构</span><span class="spec-value">核心/汇聚/接入</span></div>
+                                <div class="spec-item"><span class="spec-label">存储</span><span class="spec-value">SAN/NAS</span></div>
+                                <div class="spec-item"><span class="spec-label">虚拟化</span><span class="spec-value">VMware</span></div>
+                                <div class="spec-item"><span class="spec-label">云</span><span class="spec-value">OpenStack</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🔧</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNW-BX03</div>
+                            <div class="product-name">网络系统管理与运维实训室</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">系统</span><span class="spec-value">Windows/Linux</span></div>
+                                <div class="spec-item"><span class="spec-label">服务</span><span class="spec-value">DNS/DHCP/Web</span></div>
+                                <div class="spec-item"><span class="spec-label">脚本</span><span class="spec-value">PowerShell/Shell</span></div>
+                                <div class="spec-item"><span class="spec-label">监控</span><span class="spec-value">Zabbix</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🔌</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNW-BX02</div>
+                            <div class="product-name">网络综合布线实训室</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">线缆</span><span class="spec-value">铜缆/光纤</span></div>
+                                <div class="spec-item"><span class="spec-label">工具</span><span class="spec-value">熔接/压接</span></div>
+                                <div class="spec-item"><span class="spec-label">测试</span><span class="spec-value">认证测试仪</span></div>
+                                <div class="spec-item"><span class="spec-label">实训</span><span class="spec-value">工程设计</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">🖥️</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNW-BX01</div>
+                            <div class="product-name">计算机组装与维修实训室</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">硬件</span><span class="spec-value">CPU/主板/内存</span></div>
+                                <div class="spec-item"><span class="spec-label">系统</span><span class="spec-value">Win10/Linux</span></div>
+                                <div class="spec-item"><span class="spec-label">工具</span><span class="spec-value">诊断卡/万用表</span></div>
+                                <div class="spec-item"><span class="spec-label">实训</span><span class="spec-value">故障排除</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                    
+                    <div class="product-card">
+                        <div class="product-img">📊</div>
+                        <div class="product-info">
+                            <div class="product-model">ZNW-SJ02</div>
+                            <div class="product-name">工业数据采集与可视化实训平台</div>
+                            <div class="product-specs">
+                                <div class="spec-item"><span class="spec-label">采集</span><span class="spec-value">OPC/Modbus</span></div>
+                                <div class="spec-item"><span class="spec-label">存储</span><span class="spec-value">MySQL/InfluxDB</span></div>
+                                <div class="spec-item"><span class="spec-label">可视化</span><span class="spec-value">Grafana/组态</span></div>
+                                <div class="spec-item"><span class="spec-label">分析</span><span class="spec-value">大数据分析</span></div>
+                            </div>
+                            <button class="product-btn">查看详情</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-links">
+                <a href="index.html">首页</a>
+                <a href="products-full.html">产品中心</a>
+                <a href="about.html">关于我们</a>
+            </div>
+            <h3 style="margin-bottom:16px; color:#fff;">联系我们获取详细资料</h3>
+            <p style="color:#9ca3af; margin-bottom:8px;">联系人：罗老师<br>电话：17725356520<br>| 邮箱：sales@forjex.is-a.dev微信二维码：<br><img src="images/qrcode/wechat_luoshi17725356520.png" alt="微信二维码" style="width:120px; height:120px; margin:8px 0; border:1px solid #e5e7eb; border-radius:8px;"></p>
+            <p style="color:#6b7280; font-size:0.9rem;">© 2026 FORJEX 职教培训设备专家 | 共 46+ 产品型号</p>
+        </div>
+    </footer>
+</body>
+</html>
