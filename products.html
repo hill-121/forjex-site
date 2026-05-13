@@ -28,7 +28,17 @@
         .product-item p { color:#4b5563; font-size:0.95rem; margin-bottom:12px; }
         .product-specs { background:#f9fafb; padding:12px; border-radius:6px; font-size:0.85rem; color:#6b7280; }
         footer { background:#111827; color:#fff; padding:48px 0; text-align:center; }
-    </style>
+    
+        :root {
+          --primary: #2563eb;
+          --primary-light: #eff6ff;
+          --gray-900: #111827;
+          --gray-600: #4b5563;
+          --gray-300: #d1d5db;
+          --transition: all 0.3s ease;
+        }
+        html { scroll-behavior: smooth; }
+</style>
 </head>
 <body>
     <header>
@@ -50,11 +60,37 @@
         </div>
     </section>
 
-    <div class="products-section">
-        <div class="container">
+        <div class="products-section">
+        <div class="container" style="display: grid; grid-template-columns: 260px 1fr; gap: 48px; align-items: start;">
             
-            <!-- PLC实训台 -->
-            <div class="product-category">
+            <!-- 左侧导航 -->
+            <aside class="products-nav">
+                <h3 style="font-size: 1.1rem; font-weight: 700; margin-bottom: 16px; color: var(--gray-900);">产品分类</h3>
+                <ul style="list-style: none; padding: 0; margin: 0; border-left: 2px solid var(--gray-300);">
+                    <li style="margin-bottom: 8px;">
+                        <a href="#plc" style="display: block; padding: 8px 16px; text-decoration: none; color: var(--gray-600); border-left: 2px solid var(--primary); background: var(--primary-light); font-weight: 500;">PLC实训台系列</a>
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <a href="#robots" style="display: block; padding: 8px 16px; text-decoration: none; color: var(--gray-600); border-left: 2px solid transparent; transition: var(--transition);">工业机器人工作站</a>
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <a href="#hydraulic" style="display: block; padding: 8px 16px; text-decoration: none; color: var(--gray-600); border-left: 2px solid transparent; transition: var(--transition);">液压与气动实训装置</a>
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <a href="#smart" style="display: block; padding: 8px 16px; text-decoration: none; color: var(--gray-600); border-left: 2px solid transparent; transition: var(--transition);">智能制造生产线模型</a>
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <a href="#instruments" style="display: block; padding: 8px 16px; text-decoration: none; color: var(--gray-600); border-left: 2px solid transparent; transition: var(--transition);">过程控制与仪器仪表</a>
+                    </li>
+                    <li style="margin-bottom: 8px;">
+                        <a href="#custom" style="display: block; padding: 8px 16px; text-decoration: none; color: var(--gray-600); border-left: 2px solid transparent; transition: var(--transition);">非标自动化设备</a>
+                    </li>
+                </ul>
+            </aside>
+
+            <!-- 主内容区 -->
+            <main class="products-main">
+<div class="product-category" id="plc">
                 <h2 class="category-title">PLC实训台系列</h2>
                 <div class="product-grid">
                     <div class="product-item">
@@ -89,10 +125,7 @@
                     </div>
                 </div>
             </div>
-
-            <!-- 工业机器人 -->
-            <div class="product-category">
-                <h2 class="category-title">工业机器人工作站</h2>
+<div class="product-category" id="robots">
                 <div class="product-grid">
                     <div class="product-item">
                         <img src="images/competitors/1204154GQE14.png" alt="六轴工业机器人工作站" style="width:100%; height:auto; border-radius:8px; margin-bottom:16px;">
@@ -126,10 +159,7 @@
                     </div>
                 </div>
             </div>
-
-            <!-- 液压气动 -->
-            <div class="product-category">
-                <h2 class="category-title">液压与气动实训装置</h2>
+<div class="product-category" id="hydraulic">
                 <div class="product-grid">
                     <div class="product-item">
                         <img src="images/competitors/prod_0_010Q4401119544.png" alt="液压传动实训台" style="width:100%; height:auto; border-radius:8px; margin-bottom:16px;">
@@ -153,10 +183,7 @@
                     </div>
                 </div>
             </div>
-
-            <!-- 智能制造 -->
-            <div class="product-category">
-                <h2 class="category-title">智能制造生产线模型</h2>
+<div class="product-category" id="smart">
                 <div class="product-grid">
                     <div class="product-item">
                         <img src="images/competitors/1204154GQE14.png" alt="迷你柔性制造系统" style="width:100%; height:auto; border-radius:8px; margin-bottom:16px;">
@@ -180,10 +207,7 @@
                     </div>
                 </div>
             </div>
-
-            <!-- 仪器仪表 -->
-            <div class="product-category">
-                <h2 class="category-title">过程控制与仪器仪表</h2>
+<div class="product-category" id="instruments">
                 <div class="product-grid">
                     <div class="product-item">
                         <h4>流量计系列</h4>
@@ -214,20 +238,8 @@
                     </div>
                 </div>
             </div>
-
-        </div>
-    </div>
-
-    <footer id="contact">
-        <div class="container">
-            <h3 style="margin-bottom:16px;">联系我们获取详细资料</h3>
-            <p>联系人：罗老师<br>电话：17725356520<br>| 邮箱：sales@forjex.is-a.dev微信二维码：<br><img src="images/qrcode/wechat_luoshi17725356520.png" alt="微信二维码" style="width:120px; height:120px; margin:8px 0; border:1px solid #e5e7eb; border-radius:8px;"></p>
-            <p style="margin-top:24px; opacity:0.7;">© 2026 FORJEX 职教培训设备供应商</p>
-        </div>
-    </footer>
-
-            <div class="product-category" style="margin-top:48px; padding-top:32px; border-top:1px solid #e5e7eb;">
-                <h3 style="font-size:1.5rem; font-weight:700; color:#2563eb; margin-bottom:24px;">非标自动化设备</h3>
+            <div class="product-category" id="custom">
+                <h2 class="category-title">非标自动化设备</h2>
                 <div class="product-grid">
                     <div class="product-item">
                         <h4>定制化自动化产线</h4>
@@ -243,6 +255,51 @@
                     </div>
                 </div>
             </div>
-            
+            </main>
+        </div>
+    </div>
+
+<footer id="contact">
+        <div class="container">
+            <h3 style="margin-bottom:16px;">联系我们获取详细资料</h3>
+            <p>联系人：罗老师<br>电话：17725356520<br>| 邮箱：sales@forjex.is-a.dev微信二维码：<br><img src="images/qrcode/wechat_luoshi17725356520.png" alt="微信二维码" style="width:120px; height:120px; margin:8px 0; border:1px solid #e5e7eb; border-radius:8px;"></p>
+            <p style="margin-top:24px; opacity:0.7;">© 2026 FORJEX 职教培训设备供应商</p>
+        </div>
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  const navLinks = document.querySelectorAll('.products-nav a');
+  const sections = document.querySelectorAll('.product-category');
+
+  function setActiveLink() {
+    const scrollPos = window.scrollY + 100; // offset for sticky header
+    let current = '';
+    sections.forEach(section => {
+      const sectionTop = section.offsetTop;
+      if (scrollPos >= sectionTop && scrollPos < sectionTop + section.offsetHeight) {
+        current = section.getAttribute('id');
+      }
+    });
+    navLinks.forEach(link => {
+      const href = link.getAttribute('href').substring(1);
+      if (href === current) {
+        link.style.borderLeftColor = '#2563eb';
+        link.style.background = '#eff6ff';
+        link.style.fontWeight = '500';
+      } else {
+        link.style.borderLeftColor = 'transparent';
+        link.style.background = '';
+        link.style.fontWeight = '';
+      }
+    });
+  }
+
+  window.addEventListener('scroll', setActiveLink);
+  // Initial call
+  setActiveLink();
+});
+</script>
+
 </body>
 </html>
